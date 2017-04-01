@@ -14,20 +14,20 @@ image:
 
 ## The Structure of a Compiler
 
-img -----
-dkdkdkdkdkdkdd
+![Structure of a Compiler image](/images/compiler/structureCompiler.png)
+
+### Analysis part
 #### lexical analyzer - 단어들을 분석 (어떻게 연결되는 지는 관심이 없다)
 #### syntax analyzer - 문법을 분석 (형태가 어떻게 되어있는 지에 대해)
 #### semantic analyzer - 의미를 분석 (자세하게는 하지 않기 때문에 semi-semantic이라고도 한다)
-####  --- 여기까지 Analysis part
-#### intermediate code generator ~ machine dependent code optimizer 는 Synthesis part
-####  --- Optimizer는 두군데에 다 속한다.
-
-
+### Synthesis part
+#### intermediate code generator ~ machine dependent code optimizer
+### Optimizer는 두군데에 다 속한다.
+<br />
 
 ## Lexical Analysis
 
-img -----
+![lexical analysis](/images/compiler/lexical.png)
 
 input String을 의미있j는 단위(lexemes)로 나누고 token을 생성한다.(lexeme -> token)
 공백이나 주석은 lexical analysis 동안에 삭제된다.
