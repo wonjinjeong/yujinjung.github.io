@@ -13,7 +13,6 @@ image:
 
 ## The Structure of a Compiler
 
-<img src="/images/compiler/structureCompiler.png" height="400px" align="center" />
 ![structure](/images/compiler/structureCompiler.png)
 {: .image-center }
 
@@ -31,6 +30,7 @@ image:
 ## Lexical Analysis
 
 <img src="/images/compiler/lexical.png" height="280px" align = "center" />
+{: .image-center }
 
 input String을 의미있j는 단위(lexemes)로 나누고 token을 생성한다.(lexeme -> token)
 공백이나 주석은 lexical analysis 동안에 삭제된다.
