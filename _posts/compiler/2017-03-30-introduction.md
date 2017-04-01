@@ -9,25 +9,25 @@ image:
   credit: dargadgetz
   creditlink: http://www.dargadgetz.com/ios-7-abstract-wallpaper-pack-for-iphone-5-and-ipod-touch-retina/
 ---
-안녕하세요
 ##### ** 개인적으로 정리하는 것이기 때문에 틀린 내용이 들어가 있을 수 있습니다.
 
 ## The Structure of a Compiler
 
-![Structure of a Compiler image](/images/compiler/structureCompiler.png)
+<img src="/images/compiler/structureCompiler.png" height="400px" align="center" />
+
 
 ### Analysis part
-lexical analyzer - 단어들을 분석 (어떻게 연결되는 지는 관심이 없다)
-syntax analyzer - 문법을 분석 (형태가 어떻게 되어있는 지에 대해)
-semantic analyzer - 의미를 분석 (자세하게는 하지 않기 때문에 semi-semantic이라고도 한다)
+> lexical analyzer - 단어들을 분석 (어떻게 연결되는 지는 관심이 없다)
+> syntax analyzer - 문법을 분석 (형태가 어떻게 되어있는 지에 대해)
+> semantic analyzer - 의미를 분석 (자세하게는 하지 않기 때문에 semi-semantic이라고도 한다)
 ### Synthesis part
-intermediate code generator ~ machine dependent code optimizer
+> intermediate code generator ~ machine dependent code optimizer
 #### Optimizer는 두군데에 다 속한다.
 <br />
 
 ## Lexical Analysis
 
-![lexical analysis](/images/compiler/lexical.png)
+<img src="/images/compiler/lexical.png" height="280px" align = "center" />
 
 input String을 의미있j는 단위(lexemes)로 나누고 token을 생성한다.(lexeme -> token)
 공백이나 주석은 lexical analysis 동안에 삭제된다.
