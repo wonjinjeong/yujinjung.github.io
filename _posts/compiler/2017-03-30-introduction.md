@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Sample
+title: Introduction of Compiler
 description:
 modified: 2017-03-30
 tags: [Compiler]
@@ -14,14 +14,17 @@ image:
 ## The Structure of a Compiler
 
 <img src="/images/compiler/structureCompiler.png" height="400px" align="center" />
-
+![structure](/images/compiler/structureCompiler.png)
+{: .image-center }
 
 ### Analysis part
 > lexical analyzer - 단어들을 분석 (어떻게 연결되는 지는 관심이 없다)
 > syntax analyzer - 문법을 분석 (형태가 어떻게 되어있는 지에 대해)
 > semantic analyzer - 의미를 분석 (자세하게는 하지 않기 때문에 semi-semantic이라고도 한다)
+
 ### Synthesis part
 > intermediate code generator ~ machine dependent code optimizer
+
 #### Optimizer는 두군데에 다 속한다.
 <br />
 
