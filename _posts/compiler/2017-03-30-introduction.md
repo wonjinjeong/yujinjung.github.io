@@ -14,7 +14,6 @@ image:
 ## The Structure of a Compiler
 
 ![structure](/images/compiler/structureCompiler.png)
-{: .image-center }
 
 ### Analysis part
 > #### lexical analyzer - 단어들을 분석 (어떻게 연결되는 지는 관심이 없다)
@@ -30,7 +29,6 @@ image:
 ## Lexical Analysis
 
 ![lexical](/images/compiler/lexical.png)
-{: .image-center }
 
 #### input String을 의미있는 단위(lexemes)로 나누고 token을 생성한다.(lexeme -> token)
 #### 공백이나 주석은 lexical analysis 동안에 삭제된다.
