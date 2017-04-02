@@ -3,7 +3,7 @@ layout: post
 title: Introduction of Graphics Pipeline
 description:
 modified: 2017-04-02
-tags: [ComputerGraphics]
+tags: [Computer Graphics]
 image:
   feature: Computer/marius-masalar-132751.jpg
   credit: unsplash
