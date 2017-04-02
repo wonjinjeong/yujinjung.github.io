@@ -26,6 +26,9 @@ image:
 [^1]: http://alleysark.tistory.com/264
 
 ![OpenGL ES 2.0 Pipeline](/images/CG/opengles_20_pipeline.gif)
+![OpenGL Pipeline](/images/CG/gl-pipeline.png)
+###### <i> https://glumpy.github.io/modern-gl.html
+[^2]: https://glumpy.github.io/modern-gl.html
 > ### Vertex Shader
 
 - 각 Vertex 들의 위치를 적절히 배치해준다.
