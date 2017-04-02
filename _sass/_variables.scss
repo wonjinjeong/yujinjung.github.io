@@ -8,14 +8,14 @@
 @import url(//fonts.googleapis.com/earlyaccess/hanna.css);
 @import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
 
-/* 
+/*
    Page
    ========================================================================== */
 
-$feature-image-height            : 400px; // min 150px recommended
+$feature-image-height            : 100%; // min 150px recommended
 $front-page-feature-image-height : 400px; // min 150px recommended
 
-/* 
+/*
    Typography
    ========================================================================== */
 
@@ -35,7 +35,7 @@ body {
   font-size: 0px + $doc-font-size;
 }
 
-/* 
+/*
    Colors
    ========================================================================== */
 
@@ -53,7 +53,7 @@ $danger                          : #C64537;
 $info                            : #308cbc;
 
 
-/* 
+/*
    Screen sizes
    ========================================================================== */
 
