@@ -27,10 +27,7 @@ image:
 
 ![OpenGL ES 2.0 Pipeline](/images/CG/opengles_20_pipeline.gif)
 ![OpenGL Pipeline](/images/CG/gl-pipeline.png)
-###### (https://glumpy.github.io/modern-gl.html)
-###### https://glumpy.github.io/modern-gl.html
-https://glumpy.github.io/modern-gl.html
-(https://glumpy.github.io/modern-gl.html)
+###### [https://glumpy.github.io/modern-gl.html](https://glumpy.github.io/modern-gl.html)
 
 > ### Vertex Shader
 
