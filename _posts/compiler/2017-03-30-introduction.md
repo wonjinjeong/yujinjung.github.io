@@ -5,9 +5,7 @@ description:
 modified: 2017-03-30
 tags: [Compiler]
 image:
-  feature: abstract-3.jpg
-  credit: dargadgetz
-  creditlink: http://www.dargadgetz.com/ios-7-abstract-wallpaper-pack-for-iphone-5-and-ipod-touch-retina/
+  feature: Desk/freddy-castro-133326.jpg
 ---
 ##### ** 개인적으로 정리하는 것이기 때문에 틀린 내용이 들어가 있을 수 있습니다.
 

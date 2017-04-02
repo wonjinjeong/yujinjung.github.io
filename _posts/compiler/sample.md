@@ -29,8 +29,8 @@ image:
 {: .image-right}
 
 *This is emphasized*.
-H<sub>2</sub>O. 
-<cite>(That’s a citation)</cite>. 
+H<sub>2</sub>O.
+<cite>(That’s a citation)</cite>.
 <u>Underline</u>.
 HTML and <abbr title="cascading stylesheets">CSS</abbr>
 
