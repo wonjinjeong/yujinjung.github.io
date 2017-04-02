@@ -27,23 +27,31 @@ image:
 
 ![OpenGL ES 2.0 Pipeline](/images/CG/opengles_20_pipeline.gif)
 > ### Vertex Shader
+
 - 각 Vertex 들의 위치를 적절히 배치해준다.
 
 > ### Primitive Assembly
+
 -  점, 선, 삼각형을 어떻게 그릴 것인지 정하고 그림
 
 > ### Rasterizer
+
 - 색깔은 Vertex에만 색깔이 칠해진 상태로 각각의 상태(점, 선, 삼각형)에 따라 Fragments 을 할당해준다.
 
 > ### Fragment Shader
+
 - Rasterizer 단계에서 할당된 Fragments에 색깔을 정해 그려준다.
 
 > ### Depth test
+
 - 거리를 측정하여 가까운 것만 그리고 멀리 있는 것은 지우거나 그리지않는다.
 - 참고 : z-buffer testing
 
 > ### Stencil test
+
  - 모양 자 생각할 것
  - 0이라고 할 때 안그리고 1이라고 할 때 그리고?
-<br/>
+
+<br />
+
 ---
