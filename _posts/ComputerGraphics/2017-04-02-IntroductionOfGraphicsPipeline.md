@@ -3,9 +3,9 @@ layout: post
 title: Introduction of Graphics Pipeline
 description:
 modified: 2017-04-02
-tags: [Computer Graphics]
+tags: [Computer Graphics, OpenGL]
 image:
-  feature: Computer/marius-masalar-132751.jpg
+  feature: background/Computer/marius-masalar-132751.png
   credit: unsplash
 ---
 ##### ** 개인적으로 정리하는 것이기 때문에 틀린 내용이 들어가 있을 수 있습니다.
