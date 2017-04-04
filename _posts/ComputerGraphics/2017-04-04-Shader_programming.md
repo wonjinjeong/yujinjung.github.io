@@ -22,3 +22,22 @@ GLuint glCreateShader(GL_VERTEX_SHADER | GL_FRAGMENT_SHADER)
 > ### Output
 
 - 각각 Input으로 들어간 Shader가 return 되어나온다.
+
+```cpp
+void glDeleteProgram  (GLunit program)
+```
+
+```cpp
+void glAttachShader  (GLunit program, GLuint shaer)
+```
+
+```cpp
+void glDeleteProgram  (GLunit program)
+```
+
+
+ void void glAttachShader glAttachShaderglAttachShaderglAttachShader glAttachShader (GLuint program, shader) (GLuint program, shader) (GLuint program, shader) (GLuint program, shader) (GLuint program, shader) (GLuint program, shader) (GLuint program, shader) (GLuint program, shader) (GLuint program, shader) (GLuint program, shader) (GLuint program, shader)
+ void void glDettachShader glDettachShader glDettachShader glDettachShader (GLuint program, shader) (GLuint program, shader) (GLuint program, shader) (GLuint program, shader) (GLuint program, shader) (GLuint program, shader) (GLuint program, shader) (GLuint program, shader) (GLuint program, shader) (GLuint program, shader) (GLuint program, shader)
+ void void void glLinkProgram glLinkProgram glLinkProgram glLinkProgram glLinkProgram glLinkProgram (GLuint program) (GLuint program) (GLuint program) (GLuint program) (GLuint program) (GLuint program) (GLuint program)
+ void void glGetProgramiv glGetProgramiv glGetProgramiv glGetProgramiv (GLuint program, (GLuint program, (GLuint program, (GLuint program, (GLuint program, (GLuint program, GLenum GLenum pname pname , GLint , GLint , GLint params params )
+

@@ -3,19 +3,19 @@
    ========================================================================== */
 
 .CodeRay {
-  font-family: $code-font; 
-  @include font(14);
+  font-family: $code-font;
+  @include font(12);
   color: #d0d0d0;
   margin-bottom: 1.5em;
   border-radius: 3px;
 }
 
+
 .CodeRay .code pre {
   margin: 0;
   padding: 1em;
-  font-weight: bold;
-  background-color: #272822;
-  border: 3px solid darken($body-color, 5);
+  background-color: #ced0c3;
+  border: 1px solid darken($body-color, 5);
 }
 
 div.CodeRay { }
@@ -64,7 +64,7 @@ ol.CodeRay li { white-space: pre }
 .CodeRay .tag { color: #f92672; }
 .CodeRay .modifier,
 .CodeRay .predefined-constant { color: #ff84e4; }
-.CodeRay .comment { color: #364e91; font-weight: bold; }
+.CodeRay .comment { color: #144b20; }
 .CodeRay .error { color: #ecc; }
 .CodeRay .content { color: #e6db74; }
 .CodeRay .delimiter { color: #e6db74; }

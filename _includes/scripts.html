@@ -2,6 +2,10 @@
 <script>window.jQuery || document.write('<script src="{{ site.url }}/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
 <script src="{{ site.url }}/assets/js/scripts.min.js"></script>
 
+<link rel="stylesheet" href="{{ site.url }}/assets/highlight/monokai-sublime.css">
+<script src="{{ site.url }}/assets/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
 {% if site.google_analytics %}
 <!-- Asynchronous Google Analytics snippet -->
 <script>
@@ -10,7 +14,7 @@
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', '{{ site.google_analytics }}', 'auto');  
+  ga('create', '{{ site.google_analytics }}', 'auto');
   ga('require', 'linkid', 'linkid.js');
   ga('send', 'pageview');
 </script>
