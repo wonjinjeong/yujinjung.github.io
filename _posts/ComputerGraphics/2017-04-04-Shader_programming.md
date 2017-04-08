@@ -51,7 +51,7 @@ GLunit glCreateProgram(void)
 void glDeleteProgram(GLuint program)
 void glAttachShader(GLuint program, GLuint shader)
 // Shader를 또 Attach 한다
-// 첨부포일 보내 듯이 첨부해서
+// 첨부파일 보내 듯이 첨부해서
 // Vertex, Fragment Shader 총 두번 일어나고
 glDettachShader(GLuint program, GLuint shader)
 // Shader를 떼어내고 싶으면 DettachShader
