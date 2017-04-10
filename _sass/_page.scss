@@ -145,8 +145,8 @@ body {
 	position: relative;
 	//top: -50%;
 	//left: -50%;
-	width: 150%;
-	height: 150%;
+	width: 100%;
+	height: 100%;
 	min-height: $feature-image-height;
 	overflow: hidden;
 
@@ -167,7 +167,7 @@ body {
 		right: 0;
 		bottom: 0;
 		margin: auto;
-		min-width: 50%;
+		min-width: 100%;
 		min-height: $feature-image-height; // match .entry-image min-height
 	}
 }
