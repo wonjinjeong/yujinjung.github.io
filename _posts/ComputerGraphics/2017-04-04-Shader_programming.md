@@ -5,7 +5,7 @@ description:
 modified: 2017-04-04
 tags: [Computer Graphics, OpenGL]
 image:
-  feature: background/Computer/marius-masalar-132751.jpg
+  feature: background/Computer/6.jpg
   credit: unsplash
 ---
 ##### 개인적으로 정리하는 것이기 때문에 틀린 내용이 들어가 있을 수 있습니다.
