@@ -66,5 +66,3 @@ void glUseProgram(GLuint program)
 ```
 
 <br />
----
-<br />
