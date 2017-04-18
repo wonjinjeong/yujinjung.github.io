@@ -43,6 +43,7 @@ image:
 
 #### syntax analyser 또는 parser가 수행한다.
 #### 문법적인 form(grammatical phrase)에 맞는지 chk한다.
+#### 토큰 간의 관계가 올바르게 생성되었는지 chk
 #### parse tree | syntax tree 를 생성한다.
 #### syntax tree is compressed by parse tree.
 
@@ -52,8 +53,12 @@ image:
 
 ![parse & syntax tree](/images/compiler/parse_syntax_tree.png)
 
+## Semantic Analysis
+* [참고](http://untitledtblog.tistory.com/9)
+
 ## Code Optimization
-### 속도를 향상시킨다.
+속도를 향상시킨다.
+
 ### 기법들
 > #### folding
 > #### common subexpression elimination

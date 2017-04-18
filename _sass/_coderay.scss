@@ -21,10 +21,20 @@
 div.CodeRay { }
 span.CodeRay { white-space: pre; border: 0px; padding: 2px }
 
-table.CodeRay { border-collapse: collapse; width: 100%; padding: 2px }
+table.CodeRay {
+    border-collapse: collapse;
+    width: 100%;
+    padding: 2px;
+    border: 1px;
+    background-color: rgb(201, 164, 207);
+    column-rule-color: rgb(201, 164, 207);
+}
 table.CodeRay td {
   padding: 1em 0.5em;
   vertical-align: top;
+  border: 1px;
+  background-color: rgb(255, 255, 255) ;
+  column-rule-color: rgba(57, 65, 60, 0.82) ;
 }
 
 .CodeRay .line-numbers, .CodeRay .no {
