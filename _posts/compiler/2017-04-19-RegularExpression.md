@@ -41,7 +41,7 @@ id -> letter_(letter|digit)*
 <br/>
 
 ### edges(transitions)
-<br/> 
+<br/>
 
 ### actions
 1. goto
