@@ -169,6 +169,8 @@ body {
 		margin: auto;
 		min-width: 100%;
 		min-height: $feature-image-height; // match .entry-image min-height
+		display: block;
+		max-width: none;
 	}
 }
 #post{
