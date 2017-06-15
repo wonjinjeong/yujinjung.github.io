@@ -111,11 +111,9 @@ blockquote {
 		}
 	}
 	h2 {
-		border-left: 4px solid #999999;
-		padding-left: 15px;
 
 		@media #{$medium} {
-			margin-left: 0px;
+			margin-left: -10px;
 		}
 	}
 }
