@@ -46,15 +46,32 @@ image:
 
 - Rasterizer 단계에서 할당된 Fragments에 색깔을 정해 그려준다.
 
-> ### Depth test
+
+> ### Per Fragment Operation 
+![Per_Fragment Operation](/images/CG/per_fragment.jpg)
+
+> #### Depth test
 
 - 거리를 측정하여 가까운 것만 그리고 멀리 있는 것은 지우거나 그리지않는다.
 - 참고 : z-buffer testing
 
-> ### Stencil test
+> #### Stencil test
 
  - 모양 자 생각할 것
  - 0이라고 할 때 안그리고 1이라고 할 때 그리고?
+
+> #### Pexel Ownership test
+
+ - 이 Pixel 여러 Thread가 있다면 내 Thread에서 사용하는 것인지, 이 화면의 부분이 나의 것인지 chk
+
+> #### Scissor test
+
+ - 화면의 원하는 부분을 잘라서 사용
+
+> #### Blending
+
+ - Draw 명령마다 그려진 결과물을 어떻게 섞을 것인가를 결정
+ - 투명도를 어떻게 섞을 것인가? 같은
 
 <br />
 
