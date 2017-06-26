@@ -9,10 +9,11 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
 @import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
 
 .hljs {
-    font-family: 'Ubuntu', 'Jeju Gothic',  'Hanna', sans-serif;
+    font-family: 'Menlo', 'Ubuntu' , 'Jeju Gothic', sans-serif;
   display: block;
   overflow-x: auto;
-  padding: 0.5em;
+  padding: 1.0em;
+  margin: 0 1.0em;
   background: #23241f;
 }
 

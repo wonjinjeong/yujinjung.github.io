@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Shader Programming
+title: Shader Programming - 1
 description:
 modified: 2017-04-04
 tags: [Computer Graphics, OpenGL]
@@ -11,19 +11,21 @@ image:
 ##### 개인적으로 정리하는 것이기 때문에 틀린 내용이 들어가 있을 수 있습니다.
 ---
 
-## Creating and Compiling Shader
+# Creating and Compiling Shader
 
-### glCreateShader
+## glCreateShader
 ```cpp
 GLuint glCreateShader(GL_VERTEX_SHADER | GL_FRAGMENT_SHADER)
 
 vertexShader = glCreateShader(GL_VERTEX_SHADER);
 ```
-
+- Shader 객체 생성
 - Vertex Shader or Fragment Shader
 - 각각 Input으로 들어간 Shader가 return 되어나온다.
 
-### glShaderSource
+<br />
+
+## glShaderSource
 ```cpp
 void glShaderSource(GLuint shader, GLsizei count, const char ** string, const GLint* len)
 
@@ -32,16 +34,20 @@ glShaderSource(vertexShader, 1, (const char**)&vertexShaderSource, NULL);
 
 - 생성된 shader에 Shader source code를 할당한다.
 
-### glCompileShader
+<br />
+
+## glCompileShader
 ```cpp
 void glCompileShader(GLuint shader)
 
 glCompileShader(vertexShader);
 ```
  
-Shader를 컴파일.
+- Shader source code Compile.
 
-### glGetShaderiv
+<br />
+
+## glGetShaderiv
 ```cpp
 void glGetShaderiv(GLuint shader, GLenum pname, GLint* params)
 
@@ -52,12 +58,17 @@ glGetShaderiv(vertexShader, GL_COMPILE_STATUS, &isShaderCompiled);
 - params - pointers to interstorage location for the result of the query 
 - 컴파일 된 결과물을 params에 따라 정보를 얻는다.
 
-### glGetShaderInfoLog
+<br />
+
+## glGetShaderInfoLog
 ```cpp
 void glGetShaderInfoLog(GLuint shader, GLsizei maxLen, GLsizel *len, GLchar * infolog)
 ```
+- Shader Info log 얻기
 
-### glDeleteShader
+<br />
+
+## glDeleteShader
 ```cpp
 void glDeleteShader (GLunit shader)
 ```
@@ -67,17 +78,19 @@ void glDeleteShader (GLunit shader)
 
 ---
 
-## Creating and Linking a Program
+# Creating and Linking a Program
 
-### glCreateProgram
+## glCreateProgram
 ```cpp
 GLunit glCreateProgram(void)
 
 shaderProgram = glCreateProgram();
 ```
-- Program을 생성한다.
+- Program 객체를 생성한다.
 
-### glAttachShader && glDettachShader
+<br />
+
+## glAttachShader && glDettachShader
 ```cpp
 void glAttachShader(GLuint program, GLuint shader)
 void glDettachShader(GLuint program, GLuint shader)
@@ -86,46 +99,61 @@ glAttachShader(shaderProgram, fragmentShader);
 glAttachShader(shaderProgram, vertexShader);
 ```
 
-- Shader를 Program에 Attach한다.
+- Program에 Shader를 Attach한다.
 - vertex shader, fragment shader 각각 진행해준다.
 - Shader를 떼어내고 싶으면 DettachShader
 
-### glLinkProgram
+<br />
+
+## glLinkProgram
 ```cpp
 void glLinkProgram(GLunit program)
 
 glLinkProgram(shaderProgram)
 ```
 - Attach 후에 Link를 하게 되면 GPU에서 Run 할 준비가 된다.
+- Program을 Link 시킨다.
 
-### glGetProgramiv
+<br />
+
+## glGetProgramiv
 ```cpp
 void glGetProgramiv(GLuint program, GLenum pname, GLint params)
 
 GLint isLinked;
 glGetProgramiv(shaderProgram, GL_LINK_STATUS, &isLinked);
 ```
+- Program 객체의 Link된 상태 결과를 얻는다.
 
-### glGetProgramInfoLog
+<br />
+
+## glGetProgramInfoLog
 ```cpp
 void glGetProgramInfoLog(GLuint program, GLsizei maxLen, GLsizei *len, GLchar *  infolog)
 
 glGetProgramInfoLog(shaderProgram, infoLogLength, &charactersWritten, infoLog);
 ```
+- Program Info log 를 얻는다.
 
-### glValidateProgram
+<br />
+
+## glValidateProgram
 ```cpp
 void glValidateProgram(GLuint program)
 ```
 - Program에 오류가 있는지 없는지 알고 싶다?
 
-### glUseProgram
+<br />
+
+## glUseProgram
 ```cpp
 void glUseProgram(GLuint program)
 ```
 - Use하면 실행 상태가 된다.
 
-### glDeleteProgram
+<br />
+
+## glDeleteProgram
 ```cpp
 void glDeleteProgram(GLuint program)
 ```
