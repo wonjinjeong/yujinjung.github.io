@@ -48,6 +48,7 @@ image:
 
 
 > ### Per Fragment Operation 
+
 ![Per_Fragment Operation](/images/CG/per_fragment.jpg)
 
 > #### Depth test
