@@ -84,8 +84,8 @@ void glCullFace(GLenum mode)
   - 앞면만 그린다.
 
   ```cpp
-    glEnable(GL_CULL_FACE);
-    glCullFace(GL_FRONT);
+  glEnable(GL_CULL_FACE);
+  glCullFace(GL_FRONT);
   ```
   - 안쪽 면만 그린다.
 
