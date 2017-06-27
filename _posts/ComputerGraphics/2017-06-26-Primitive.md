@@ -11,11 +11,9 @@ image:
 ##### 개인적으로 정리하는 것이기 때문에 틀린 내용이 들어가 있을 수 있습니다.
 ---
 
-# Primitives
+# Point Sprites
 
-## Point Sprites
-
-### GL_POINTS
+## GL_POINTS
   * gl_PointSize - build in variable for point radius
   * gl_PointCoord - vec2 variable in fragment shader
   * PointCoord cna be used as texture corrdinate to draw textured point sprinte
@@ -33,29 +31,31 @@ void main(void)
 
 ---
 
-## Lines
+# Lines
 
-### GL_LINES
+## GL_LINES
 
 <figure>
-	<a href="/images/CG/gl_line_loop.png"><img src="/images/CG/gl_lines.png" alt=""></a>
-	<figcaption><a href="/images/CG/gl_lines.png" title="GL_LINES"> GL_LINES</a></figcaption>
+  <a href="/images/CG/gl_line_loop.png"><img src="/images/CG/gl_lines.png" alt=""></a>
+  <figcaption><a href="/images/CG/gl_lines.png" title="GL_LINES"> GL_LINES</a></figcaption>
 </figure>
 
-  - n vertices -> n/2 lines
-  - (v0, v1), (v2, v3), (v4, v5), ...
+<br/>
 
-### GL_LINE_STRIP
+## GL_LINE_STRIP
 
 <figure>
 	<a href="/images/CG/gl_line_strip.png"><img src="/images/CG/gl_line_strip.png" alt=""></a>
 	<figcaption><a href="/images/CG/gl_line_strip.png" title="GL_LINE_STRIP">GL_LINE_STRIP</a></figcaption>
 </figure>
 
+
   - n vertices -> (n-1) lines
   - (v0, v1), (v1, v2), (v2, v3), ...
 
-### GL_LINE_LOOP
+<br/>
+
+## GL_LINE_LOOP
 
 <figure>
 	<a href="/images/CG/gl_line_loop.png"><img src="/images/CG/gl_line_loop.png" alt=""></a>
@@ -75,8 +75,8 @@ void main(void)
 
 ---
 
-## Triangles
-### GL_TRIANGLES
+# Triangles
+## GL_TRIANGLES
 
 <figure>
 	<a href="/images/CG/gl_triangles.png"><img src="/images/CG/gl_triangles.png" alt=""></a>
@@ -86,7 +86,7 @@ void main(void)
   - n vertices -> n/3 triangles 
   - (v0, v1, v2), (v3, v4, v5), ...
 
-### GL_TRIANGLE_STRIP
+## GL_TRIANGLE_STRIP
 
 <figure>
 	<a href="/images/CG/gl_triangle_strip.png"><img src="/images/CG/gl_triangle_strip.png" alt=""></a>
@@ -96,9 +96,7 @@ void main(void)
   - n vertices -> (n-2) triangles 
   - (v0, v1, v2), (v2, v1, v3), ...
 
-### GL_TRIANGLE_FAN
-
-![GL_TRIANGLE_FAN](/images/CG/gl_triangle_fan.png)
+## GL_TRIANGLE_FAN
 
 <figure>
 	<a href="/images/CG/gl_triangle_fan.png"><img src="/images/CG/gl_triangle_fan.png" alt=""></a>
@@ -115,9 +113,9 @@ void main(void)
 
 ---
 
-## Draw Primitives
+# Draw Primitives
 
-### glDrawArrays
+## glDrawArrays
 
 ```cpp
 void glDrawArrays(GLenum mode, GLint first, GLsizei count)
@@ -140,7 +138,7 @@ void glDrawArrays(GLenum mode, GLint first, GLsizei count)
   * vertex array에서 시작할 곳을 지정한다.
 
 
-### glDrawElements
+## glDrawElements
 
 <figure>
 	<a href="/images/CG/glDrawElements.png"><img src="/images/CG/glDrawElements.png" alt=""></a>

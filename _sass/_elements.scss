@@ -25,6 +25,8 @@ code {
 figure {
   margin: 0;
   padding: 10px 9%;
+  text-align: center;
+  
   @include clearfix();
 
   img {
