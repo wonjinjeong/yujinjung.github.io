@@ -29,15 +29,25 @@ void main(void)
 
 ## Lines
 * GL_LINES
+
 ![GL_LINES](/images/CG/gl_lines.png)
-  - n vertices - n/2 lines
-  - (v0, v1), (v2, v3), (v4, v5)
+  - n vertices -> n/2 lines
+  - (v0, v1), (v2, v3), (v4, v5), ...
 
 * GL_LINE_STRIP
+
 ![GL_LINE_STRIP](/images/CG/gl_line_strip.png)
-  - n
+  - n vertices -> (n-1) lines
+  - (v0, v1), (v1, v2), (v2, v3), ...
 
 * GL_LINE_LOOP
+
 ![GL_LINE_LOOP](/images/CG/gl_line_loop.png)
+  - n vertices -> (n) lines
+  - (v0, v1), (v1, v2), (v2, v3), ... , (vn, v0)
+  - 닫힌다.
+
+* 모두 glDrawArrays 나 glDrawElemnets로 그린다.
 
 * glLineWidth
+  - set line width
