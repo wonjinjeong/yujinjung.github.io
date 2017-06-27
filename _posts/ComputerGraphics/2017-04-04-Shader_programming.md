@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Shader Programming - 1
+title: Shader Programming - Create, Compile, Link 
 description:
 modified: 2017-04-04
 tags: [Computer Graphics, OpenGL]
