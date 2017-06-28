@@ -26,8 +26,21 @@ image:
 
 [^1]: http://alleysark.tistory.com/264
 
-![OpenGL ES 2.0 Pipeline](/images/CG/opengles_20_pipeline.gif)
-![OpenGL Pipeline](/images/CG/gl-pipeline.png)
+<figure>
+	<a href="/images/CG/pipeline/opengles_20_pipeline.gif"><img src="/images/CG/pipeline/opengles_20_pipeline.gif" alt=""></a>
+	<figcaption><a href="/images/CG/pipeline/opengles_20_pipeline.gif" title="OpenGL ES 2.0 Pipeline">OpenGL ES 2.0 Pipeline</a></figcaption>
+</figure>
+
+<figure>
+	<a href="/images/CG/pipeline/pipeline.jpg"><img src="/images/CG/pipeline/pipeline.jpg" alt=""></a>
+	<figcaption><a href="/images/CG/pipeline/pipeline.jpg" title="OpenGL ES 2.0 Pipeline">OpenGL ES 2.0 Pipeline</a></figcaption>
+</figure>
+
+<figure>
+	<a href="/images/CG/pipeline/gl-pipeline.png"><img src="/images/CG/pipeline/gl-pipeline.png" alt=""></a>
+	<figcaption><a href="/images/CG/pipeline/gl-pipeline.png" title="OpenGL Pipeline">OpenGL Pipeline</a></figcaption>
+</figure>
+
 ###### [https://glumpy.github.io/modern-gl.html](https://glumpy.github.io/modern-gl.html)
 
 > ### Vertex Shader
@@ -49,7 +62,11 @@ image:
 
 > ### Per Fragment Operation 
 
-![Per_Fragment Operation](/images/CG/per_fragment.jpg)
+<figure>
+	<a href="/images/CG/pipeline/per_fragment.jpg"><img src="/images/CG/pipeline/per_fragment.jpg" alt=""></a>
+	<figcaption><a href="/images/CG/pipeline/per_fragment.jpg" title="Per_Fragment Operation">Per_Fragment Operation</a></figcaption>
+</figure>
+
 
 > ### Depth test
 

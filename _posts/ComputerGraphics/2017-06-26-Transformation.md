@@ -5,7 +5,7 @@ description:
 modified: 2017-06-26
 tags: [Computer Graphics, OpenGL]
 image:
-  feature: background/Computer/2.jpg
+  feature: background/Computer/3.jpg
   credit: unsplash
 ---
 ##### 개인적으로 정리하는 것이기 때문에 틀린 내용이 들어가 있을 수 있습니다.
@@ -19,8 +19,8 @@ image:
   * Point 나 Vector를 이동해서 변형한다.
 
 <figure>
-  <a href="/images/CG/linear_transform.png"><img src="/images/CG/linear_transform.png" alt=""></a>
-  <figcaption><a href="/images/CG/linear_transform.png" title="linear_transform"> linear_transform</a></figcaption>
+  <a href="/images/CG/Transformation/linear_transform.png"><img src="/images/CG/Transformation/linear_transform.png" alt=""></a>
+  <figcaption><a href="/images/CG/Transformation/linear_transform.png" title="linear_transform"> linear_transform</a></figcaption>
 </figure>
 
 <br/>
@@ -30,8 +30,8 @@ image:
 # Translation 
 
 <figure>
-  <a href="/images/CG/clipping.png"><img src="/images/CG/clipping.png" alt=""></a>
-  <figcaption><a href="/images/CG/clipping.png" title="">clipping</a></figcaption>
+  <a href="/images/CG/Transformation/clipping.png"><img src="/images/CG/Transformation/clipping.png" alt=""></a>
+  <figcaption><a href="/images/CG/Transformation/clipping.png" title="">clipping</a></figcaption>
 </figure>
 
 - 이동을 진행한다.
@@ -79,15 +79,21 @@ image:
 [https://www.slideshare.net/champ_yen/opengl-es-2x-programming-introduction](https://www.slideshare.net/champ_yen/opengl-es-2x-programming-introduction)
 
 <figure>
-<a href="/images/CG/2drotate.png"><img src="/imagesCG/2drotate.png"></a>
-<figcaption><a href="/images/CG/2drotate.png">2D Rotate</a></figcaption>
+<a href="/images/CG/Transformation/2drotate.png"><img src="/images/CG/Transformation/2drotate.png"></a>
+<figcaption><a href="/images/CG/Transformation/2drotate.png">2D Rotate</a></figcaption>
 </figure>
 
 <figure class="third">
-  <a href="/images/CG/rotatex.gif"><img src = "/images/CG/rotatex.gif" alt=""></a>
-  <a href="/images/CG/rotatey.gif"><img src = "/images/CG/rotatey.gif" alt=""></a>
-  <a href="/images/CG/rotatez.gif"><img src = "/images/CG/rotatez.gif" alt=""></a>
-  <figcaption><a href="/images/CG/rotatex.gif" title="">Rotate about x y z axis</a> </figcaption>
+  <a href="/images/CG/Transformation/rotatex.gif"><img src = "/images/CG/Transformation/rotatex.gif" alt=""></a>
+  <a href="/images/CG/Transformation/rotatey.gif"><img src = "/images/CG/Transformation/rotatey.gif" alt=""></a>
+
+  <figcaption><a href="/images/CG/Transformation/rotatex.gif" title="">Rotate about x y z axis</a> </figcaption>
+</figure>
+
+
+<figure>
+<a href="/images/CG/Transformation/rotatez.gif"><img src = "/images/CG/Transformation/rotatez.gif" alt=""></a>
+<figcaption><a href="/images/CG/Transformation/2drotate.png">2D Rotate</a></figcaption>
 </figure>
 
 <br/>
@@ -102,6 +108,6 @@ image:
 - q<sub>z</sub> = s<sub>z</sub>x
 
 <figure>
-  <a href="/images/CG/scaling.gif"><img src = "/images/CG/scaling.gif" alt=""></a>
-  <figcaption><a href="/images/CG/scaling.gif" title="">Scaling</a> </figcaption>
+  <a href="/images/CG/Transformation/scaling.gif"><img src = "/images/CG/Transformation/scaling.gif" alt=""></a>
+  <figcaption><a href="/images/CG/Transformation/scaling.gif" title="">Scaling</a> </figcaption>
 </figure>

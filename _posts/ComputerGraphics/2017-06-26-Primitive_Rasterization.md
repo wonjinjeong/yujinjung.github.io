@@ -14,9 +14,9 @@ image:
 # Primitive Assembly
 
 <figure class="half">
-  <a href="/images/CG/primitive_assembly_stage.png"><img src="/images/CG/primitive_assembly_stage.png" alt=""></a>
-  <a href="/images/CG/primitive_assembly_stage_2.png"><img src="/images/CG/primitive_assembly_stage_2.png" alt=""></a>
-  <figcaption><a href="/images/CG/primitive_assembly_stage.png" title="primitive_assembly_stage"> primitive_assembly_stage</a></figcaption>
+  <a href="/images/CG/Primitive_Rasterization/primitive_assembly_stage.png"><img src="/images/CG/Primitive_Rasterization/primitive_assembly_stage.png" alt=""></a>
+  <a href="/images/CG/Primitive_Rasterization/primitive_assembly_stage_2.png"><img src="/images/CG/Primitive_Rasterization/primitive_assembly_stage_2.png" alt=""></a>
+  <figcaption><a href="/images/CG/Primitive_Rasterization/primitive_assembly_stage.png" title="primitive_assembly_stage"> primitive_assembly_stage</a></figcaption>
 </figure>
 
 <br/>
@@ -24,8 +24,8 @@ image:
 # Clipping
 
 <figure>
-  <a href="/images/CG/clipping.png"><img src="/images/CG/clipping.png" alt=""></a>
-  <figcaption><a href="/images/CG/clipping.png" title="">clipping</a></figcaption>
+  <a href="/images/CG/Primitive_Rasterization/clipping.png"><img src="/images/CG/Primitive_Rasterization/clipping.png" alt=""></a>
+  <figcaption><a href="/images/CG/Primitive_Rasterization/clipping.png" title="">clipping</a></figcaption>
 </figure>
 
 - Viewing Volume
@@ -47,8 +47,8 @@ image:
 # Rasterization
 
 <figure>
-  <a href="/images/CG/rasterization.png"><img src="/images/CG/rasterization.png" alt=""></a>
-  <figcaption><a href="/images/CG/rasterization.png" title=""> </a></figcaption>
+  <a href="/images/CG/Primitive_Rasterization/rasterization.png"><img src="/images/CG/Primitive_Rasterization/rasterization.png" alt=""></a>
+  <figcaption><a href="/images/CG/Primitive_Rasterization/rasterization.png" title=""> </a></figcaption>
 </figure>
 
 # Culling
@@ -89,6 +89,8 @@ void glCullFace(GLenum mode)
   ```
   - 안쪽 면만 그린다.
 
+<br/>
+
 ## glEnable / glDisable
 
 ```cpp
@@ -98,11 +100,13 @@ glDisable(GL_CULL_FACE);
 
 - Culling을 활성화 하거나 비활성화한다.
 
+<br/>
+
 ## Hidden Surface Removal
 
 <figure>
-  <a href="/images/CG/zbuffer.png"><img src="/images/CG/zbuffer.png" alt=""></a>
-  <figcaption><a href="/images/CG/zbuffer.png" title=""> </a></figcaption>
+  <a href="/images/CG/Primitive_Rasterization/zbuffer.png"><img src="/images/CG/Primitive_Rasterization/zbuffer.png" alt=""></a>
+  <figcaption><a href="/images/CG/Primitive_Rasterization/zbuffer.png" title=""> z-buffer</a></figcaption>
 </figure>
 
 - 불투명한 물체일 경우 우리는 앞에 있는 물체만을 볼 수 있기 때문에 뒤에 있는 물체의 경우 그리지 않아도 무방하다.

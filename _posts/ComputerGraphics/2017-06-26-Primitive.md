@@ -5,7 +5,7 @@ description:
 modified: 2017-06-26
 tags: [Computer Graphics, OpenGL]
 image:
-  feature: background/Computer/1.jpg
+  feature: background/Computer/2.jpg
   credit: unsplash
 ---
 ##### 개인적으로 정리하는 것이기 때문에 틀린 내용이 들어가 있을 수 있습니다.
@@ -36,8 +36,8 @@ void main(void)
 ## GL_LINES
 
 <figure>
-  <a href="/images/CG/gl_line_loop.png"><img src="/images/CG/gl_lines.png" alt=""></a>
-  <figcaption><a href="/images/CG/gl_lines.png" title="GL_LINES"> GL_LINES</a></figcaption>
+  <a href="/images/CG/Primitive/gl_line_loop.png"><img src="/images/CG/Primitive/gl_lines.png" alt=""></a>
+  <figcaption><a href="/images/CG/Primitive/gl_lines.png" title="GL_LINES"> GL_LINES</a></figcaption>
 </figure>
 
 <br/>
@@ -45,8 +45,8 @@ void main(void)
 ## GL_LINE_STRIP
 
 <figure>
-	<a href="/images/CG/gl_line_strip.png"><img src="/images/CG/gl_line_strip.png" alt=""></a>
-	<figcaption><a href="/images/CG/gl_line_strip.png" title="GL_LINE_STRIP">GL_LINE_STRIP</a></figcaption>
+	<a href="/images/CG/Primitive/gl_line_strip.png"><img src="/images/CG/Primitive/gl_line_strip.png" alt=""></a>
+	<figcaption><a href="/images/CG/Primitive/gl_line_strip.png" title="GL_LINE_STRIP">GL_LINE_STRIP</a></figcaption>
 </figure>
 
 
@@ -58,8 +58,8 @@ void main(void)
 ## GL_LINE_LOOP
 
 <figure>
-	<a href="/images/CG/gl_line_loop.png"><img src="/images/CG/gl_line_loop.png" alt=""></a>
-	<figcaption><a href="/images/CG/gl_line_loop.png" title="GL_LINE_LOOP"> GL_LINE_LOOP</a></figcaption>
+	<a href="/images/CG/Primitive/gl_line_loop.png"><img src="/images/CG/Primitive/gl_line_loop.png" alt=""></a>
+	<figcaption><a href="/images/CG/Primitive/gl_line_loop.png" title="GL_LINE_LOOP"> GL_LINE_LOOP</a></figcaption>
 </figure>
 
   - n vertices -> (n) lines
@@ -79,8 +79,8 @@ void main(void)
 ## GL_TRIANGLES
 
 <figure>
-	<a href="/images/CG/gl_triangles.png"><img src="/images/CG/gl_triangles.png" alt=""></a>
-	<figcaption><a href="/images/CG/gl_triangles.png" title="GL_TRIANGLES"> GL_TRIANGLES</a></figcaption>
+	<a href="/images/CG/Primitive/gl_triangles.png"><img src="/images/CG/Primitive/gl_triangles.png" alt=""></a>
+	<figcaption><a href="/images/CG/Primitive/gl_triangles.png" title="GL_TRIANGLES"> GL_TRIANGLES</a></figcaption>
 </figure>
 
   - n vertices -> n/3 triangles 
@@ -89,8 +89,8 @@ void main(void)
 ## GL_TRIANGLE_STRIP
 
 <figure>
-	<a href="/images/CG/gl_triangle_strip.png"><img src="/images/CG/gl_triangle_strip.png" alt=""></a>
-	<figcaption><a href="/images/CG/gl_triangle_strip.png" title="GL_TRIANGLE_STRIP"> GL_TRIANGLE_STRIP</a></figcaption>
+	<a href="/images/CG/Primitive/gl_triangle_strip.png"><img src="/images/CG/Primitive/gl_triangle_strip.png" alt=""></a>
+	<figcaption><a href="/images/CG/Primitive/gl_triangle_strip.png" title="GL_TRIANGLE_STRIP"> GL_TRIANGLE_STRIP</a></figcaption>
 </figure>
 
   - n vertices -> (n-2) triangles 
@@ -99,8 +99,8 @@ void main(void)
 ## GL_TRIANGLE_FAN
 
 <figure>
-	<a href="/images/CG/gl_triangle_fan.png"><img src="/images/CG/gl_triangle_fan.png" alt=""></a>
-	<figcaption><a href="/images/CG/gl_triangle_fan.png" title="GL_TRIANGLE_STRIP"> GL_TRIANGLE_STRIP</a></figcaption>
+	<a href="/images/CG/Primitive/gl_triangle_fan.png"><img src="/images/CG/Primitive/gl_triangle_fan.png" alt=""></a>
+	<figcaption><a href="/images/CG/Primitive/gl_triangle_fan.png" title="GL_TRIANGLE_STRIP"> GL_TRIANGLE_STRIP</a></figcaption>
 </figure>
 
   - n vertices -> (n-2) triangles 
@@ -122,8 +122,8 @@ void glDrawArrays(GLenum mode, GLint first, GLsizei count)
 ```
 
 <figure>
-	<a href="/images/CG/glDrawArrays.png"><img src="/images/CG/glDrawArrays.png" alt=""></a>
-	<figcaption><a href="/images/CG/glDrawArrays.png" title="glDrawArrays"> glDrawArrays</a></figcaption>
+	<a href="/images/CG/Primitive/glDrawArrays.png"><img src="/images/CG/Primitive/glDrawArrays.png" alt=""></a>
+	<figcaption><a href="/images/CG/Primitive/glDrawArrays.png" title="glDrawArrays"> glDrawArrays</a></figcaption>
 </figure>
 
 * mode
@@ -138,11 +138,13 @@ void glDrawArrays(GLenum mode, GLint first, GLsizei count)
   * vertex array에서 시작할 곳을 지정한다.
 
 
+<br/>
+
 ## glDrawElements
 
 <figure>
-	<a href="/images/CG/glDrawElements.png"><img src="/images/CG/glDrawElements.png" alt=""></a>
-	<figcaption><a href="/images/CG/glDrawElements.png" title="glDrawElements"> glDrawElements</a></figcaption>
+	<a href="/images/CG/Primitive/glDrawElements.png"><img src="/images/CG/Primitive/glDrawElements.png" alt=""></a>
+	<figcaption><a href="/images/CG/Primitive/glDrawElements.png" title="glDrawElements"> glDrawElements</a></figcaption>
 </figure>
 
 ```cpp
