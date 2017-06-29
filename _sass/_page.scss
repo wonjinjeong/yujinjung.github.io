@@ -568,6 +568,16 @@ Google Search
 	transition: transform ease-out 200ms, -webkit-transform ease-out 200ms;
 }
 
+.list_category {
+	position: fixed;
+	width: 300px;
+	height: 600px;
+	right: 300px;
+	bottom: 5%;
+	background-color: red;
+	border-color: grey;
+}
+
 .menu-open {
 	display: none;
 }
@@ -631,11 +641,12 @@ Google Search
 	box-sizing: border-box;
 	font-size: 18px;
 	@media #{$medium} {
+		margin-right:20px;
 		bottom: 20%;
 	}
 	@media #{$large} {
 		bottom: 20%;
-		margin-right: 10%;
+		margin-right: 120px;
 		font-size: 24px;
 	}
 	a:link {
@@ -894,6 +905,12 @@ Google Search
 
 #navigation {
 	@media #{$small} {
+		.list_category {
+			width: 400px;
+			height: 400px;
+			border-width: 3px;
+			border-color: red;
+		}
 		.menu-item,
 		.menu-open-button {
 			width: 40px;
@@ -969,6 +986,9 @@ Google Search
 		.line-3 {
 			-webkit-transform: translate3d(0, 8px, 0);
 			transform: translate3d(0, 8px, 0);
+		}
+		.category_:checked+.list_category {
+
 		}
 		.menu-open:checked+.menu-open-button .line-1 {
 			-webkit-transform: translate3d(0, 0, 0) rotate(45deg);
