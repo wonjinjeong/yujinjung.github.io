@@ -171,7 +171,7 @@ body {
 }
 
 // Feature Image height on Front Page
-#post-index {
+#post-index{
 	&.feature .header-title {
 		height: $front-page-feature-image-height;
 	}
@@ -179,6 +179,19 @@ body {
 		min-height: $front-page-feature-image-height;
 		top: -50%;
 		left: -50%;
+		width: 200%;
+		height: 200%;
+		img {
+			min-height: $front-page-feature-image-height;
+		}
+	}
+}
+
+#post-first {
+	.entry-image {
+		min-height: $front-page-feature-image-height;
+		top: -50%;
+		left: -100%;
 		width: 200%;
 		height: 200%;
 		img {
@@ -257,6 +270,12 @@ header .entry-meta {
 	display: none; // hide header meta on small screens
 	@media #{$medium} {
 		display: block;
+	}
+}
+
+#post-first {
+	.entry-header {
+		height: 100%;
 	}
 }
 
@@ -429,7 +448,8 @@ header .entry-meta {
 Post index
 ========================================================================== */
 
-#post-index {
+#post-index,
+#post-first {
 	#main {
 		margin: 40px 2px 20px 2px;
 		@media #{$medium} {
