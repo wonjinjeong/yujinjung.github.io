@@ -15,7 +15,7 @@ DL Menu
 	@media #{$medium} {
 		position: fixed;
 		max-width: 75px; // top: 125px;
-		right:-22px;
+		right:-10px;
 		// left: 125px;
 	}
 	@media #{$large} {
@@ -177,6 +177,11 @@ DL Menu
 	li .dl-submenu {
 		display: none;
 	}
+
+	li .dl-submenu.about {
+		display: none;
+		background: rgba(#000, 0.1);
+	}
 }
 
 
@@ -233,7 +238,8 @@ All this is done for any sub-level being entered.
 /* No Touch Fallback */
 
 .no-touch .dl-menuwrapper li a:hover {
-	background: rgba(255, 248, 213, 0.1);
+	background: rgba(255, 255, 255, 1.0);
+	// background: rgba(255, 248, 213, 0.1);
 }
 
 
@@ -260,6 +266,7 @@ All this is done for any sub-level being entered.
 	.dl-menuwrapper li .dl-submenu {
 		display: block;
 	}
+	
 	.dl-menuwrapper li.dl-back {
 		display: none;
 	}
