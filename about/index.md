@@ -1,11 +1,11 @@
 ---
 layout: page
-title: About the Jekyll Theme
+title: About Me
 image:
-  feature: background/Computer/3.jpg
+  feature: background/Computer/1.jpg
   credit: unsplash
 comments: false
-modified: 2016-02-01
+modified: 2017-06-30
 ---
 
 They say three times the charm, so here is another free responsive Jekyll blog theme for you. I've learned a ton since open sourcing my first two themes [on Github](http://github.com/mmistakes), and wanted to try a few new things this time around. 
@@ -26,6 +26,7 @@ If you've used any of [my other themes](http://mademistakes.com/work/jekyll-them
 * [Custom 404 page]({{ site.url }}/404.html) to get you started.
 * [Syntax highlighting]({{ site.url }}/code-highlighting-post/) stylesheets to make your code examples look snazzy.
 
-<div markdown="0"><a href="{{ site.url }}/theme-setup/" class="btn btn-info">Theme Setup</a> <a href="https://github.com/mmistakes/hpstr-jekyll-theme" class="btn btn-success">Download HPSTR</a></div>
+<div markdown="0"><a href="{{ site.url }}/theme-setup/" class="btn btn-info">Theme Setup</a> </div>
+<div markdown="0"><a href="https://github.com/mmistakes/hpstr-jekyll-theme" class="btn btn-success">Download HPSTR</a></div>
 
 [^1]: Example: *domain.com/category-name/post-title*

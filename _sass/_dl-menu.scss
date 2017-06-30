@@ -12,11 +12,16 @@ DL Menu
 	-webkit-perspective-origin: 50% 200%;
 	-moz-perspective-origin: 50% 200%;
 	perspective-origin: 50% 200%;
+	right: -10px;
+	@media #{$small} {
+		position: fixed;
+		max-width: 75px; // top: 125px;
+		right: -10px; // left: 125px;
+	}
 	@media #{$medium} {
 		position: fixed;
 		max-width: 75px; // top: 125px;
-		right:-10px;
-		// left: 125px;
+		right: -10px; // left: 125px;
 	}
 	@media #{$large} {
 		position: fixed;
@@ -25,7 +30,7 @@ DL Menu
 		right: -30px;
 	}
 	&.dl-menuopen {
-		width: 100%;
+		// width: 100%;
 		height: 100%;
 	}
 	button {
@@ -103,20 +108,21 @@ DL Menu
 		&.dl-back>a {
 			padding-left: 30px;
 			background: rgba(0, 0, 0, 0.2);
+			display: none;
 		}
 		&.dl-back:after,
 		>a:not(:only-child):after {
 			position: absolute; // top: 0;
 			line-height: 50px;
 			font-family: "fontawesome";
-			color: #fff;
+			color: rgba(0,0,0,0);
 			speak: none;
 			-webkit-font-smoothing: antialiased;
 			content: "\f105";
 		}
 		&.dl-back:after {
 			// left: 10px;
-			color: rgba(212, 204, 198, 0.5);
+			color: rgba(212, 204, 198, 0);
 			-webkit-transform: rotate(180deg);
 			-moz-transform: rotate(180deg);
 			transform: rotate(180deg);
@@ -158,11 +164,24 @@ DL Menu
 		-webkit-transform: translateY(0px);
 		-moz-transform: translateY(0px);
 		transform: translateY(0px);
-		width:250px;
-		height: 700px;
-		right: 280px;
-		min-height: 700px;
-		bottom: 500px;
+		width: 200px;
+		// height: 700px;
+		right: 220px;
+		min-height: 400px;
+		bottom: 300px;
+
+		@media #{$small} {
+			width: 200px;
+			right: 220px;
+		}
+		@media #{$medium} {
+			width: 250px;
+			right: 280px;
+		}
+		@media #{$small} {
+			width: 250px;
+			right: 280px;
+		}
 	}
 	.dl-submenu {
 		border-radius: 3px;
@@ -170,14 +189,11 @@ DL Menu
 		.btn {
 			margin-bottom: 0;
 		}
-		
 	}
-
 	/* Hide the inner submenus */
 	li .dl-submenu {
 		display: none;
 	}
-
 	li .dl-submenu.about {
 		display: none;
 		background: rgba(#000, 0.1);
@@ -238,8 +254,7 @@ All this is done for any sub-level being entered.
 /* No Touch Fallback */
 
 .no-touch .dl-menuwrapper li a:hover {
-	background: rgba(255, 255, 255, 1.0);
-	// background: rgba(255, 248, 213, 0.1);
+	background: rgba(255, 255, 255, 1.0); // background: rgba(255, 248, 213, 0.1);
 }
 
 
@@ -266,7 +281,6 @@ All this is done for any sub-level being entered.
 	.dl-menuwrapper li .dl-submenu {
 		display: block;
 	}
-	
 	.dl-menuwrapper li.dl-back {
 		display: none;
 	}

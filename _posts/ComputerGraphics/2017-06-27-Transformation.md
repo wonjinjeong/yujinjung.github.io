@@ -29,11 +29,6 @@ image:
 
 # Translation 
 
-<figure>
-  <a href="/images/CG/Transformation/clipping.png"><img src="/images/CG/Transformation/clipping.png" alt=""></a>
-  <figcaption><a href="/images/CG/Transformation/clipping.png" title="">clipping</a></figcaption>
-</figure>
-
 - 이동을 진행한다.
 
 ## 과정
@@ -76,11 +71,9 @@ image:
 
 ###  X축 Y축 Z축
 
-[https://www.slideshare.net/champ_yen/opengl-es-2x-programming-introduction](https://www.slideshare.net/champ_yen/opengl-es-2x-programming-introduction)
-
 <figure>
 <a href="/images/CG/Transformation/2drotate.png"><img src="/images/CG/Transformation/2drotate.png"></a>
-<figcaption><a href="/images/CG/Transformation/2drotate.png">2D Rotate</a></figcaption>
+<figcaption>[Link] <a href="https://www.slideshare.net/champ_yen/opengl-es-2x-programming-introduction">2D Rotate</a></figcaption>
 </figure>
 
 <figure class="third">

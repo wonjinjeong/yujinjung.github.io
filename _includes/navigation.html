@@ -11,12 +11,10 @@
 	<nav id="dl-menu" class="menu-item lightblue dl-menuwrapper" role="navigation">
 		<i class="dl-trigger fa fa-th-list"></i>
 		<ul class="dl-menu">
-			<li><a href="{{ site.url }}/">Home</a></li>
 			<li>
 				<a href="#">About</a>
 				<ul class="dl-submenu about">
 					<li>
-						<img src="{{ site.url }}/images/{{ site.owner.avatar }}" alt="{{ site.owner.name }} photo" class="author-photo">
 						<h4>{{ site.owner.name }}</h4>
 						<p>{{ site.owner.bio }}</p>
 					</li>
@@ -56,11 +54,17 @@
 				<!-- /.dl-submenu -->
 			</li>
 			<li><a href="{{ site.url }}/posts/">Posts</a></li>
-			<li><a href="{{ site.url }}/recent_Posts/">recent_Posts</a></li>
-			{% for link in site.data.navigation %} {% if link.url contains 'http' %} {% assign domain = '' %} {% else %} {% assign domain
+			<li><a href="{{ site.url }}/tags/">Tags</a></li>
+			<li><a href="{{ site.url }}/tags/#C">C</a></li>
+			<li><a href="{{ site.url }}/tags/#C++">C++</a></li>
+			<li><a href="{{ site.url }}/tags/#Compiler">Compiler</a></li>
+			<li><a href="{{ site.url }}/tags/#Computer Graphics">Computer Graphics</a></li>
+			<li><a href="{{ site.url }}/tags/#Tips">Tips</a></li>
+			<li><a href="{{ site.url }}/tags/#VR">VR</a></li>
+			<!--{% for link in site.data.navigation %} {% if link.url contains 'http' %} {% assign domain = '' %} {% else %} {% assign domain
 			= site.url %} {% endif %}
 			<li><a href="{{ domain }}{{ link.url }}" {% if link.url contains 'http' %}target="_blank" {% endif %}>{{ link.title }}</a></li>
-			{% endfor %}
+			{% endfor %}-->
 		</ul>
 		<!-- /.dl-menu -->
 	</nav>

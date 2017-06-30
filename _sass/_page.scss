@@ -262,6 +262,9 @@ header .entry-meta {
 
 #post,
 #page {
+	.entry-header {
+		height: 100%;
+	}
 	.entry-content {
 		margin: 40px 2px 20px 2px;
 		padding: 10px 15px;
@@ -313,6 +316,11 @@ header .entry-meta {
 .tag-heading,
 .year-heading {
 	margin-top: 0;
+}
+
+.tag-heading {
+	margin-top: -40%;
+	padding-top: 40%;
 }
 
 // Permalink icon for link post
@@ -367,7 +375,6 @@ header .entry-meta {
 	height: 35px;
 	a {
 		@extend .btn;
-		
 	}
 }
 
@@ -554,7 +561,7 @@ Google Search
 .menu-item,
 .menu-open-button {
 	background: #EEEEEE;
-	border-radius: 100%;
+	border-radius: 30%;
 	width: 40px;
 	height: 40px;
 	position: absolute;
@@ -642,7 +649,7 @@ Google Search
 	box-sizing: border-box;
 	font-size: 18px;
 	@media #{$medium} {
-		margin-right:20px;
+		margin-right: 20px;
 		bottom: 20%;
 	}
 	@media #{$large} {
@@ -988,9 +995,7 @@ Google Search
 			-webkit-transform: translate3d(0, 8px, 0);
 			transform: translate3d(0, 8px, 0);
 		}
-		.category_:checked+.list_category {
-
-		}
+		.category_:checked+.list_category {}
 		.menu-open:checked+.menu-open-button .line-1 {
 			-webkit-transform: translate3d(0, 0, 0) rotate(45deg);
 			transform: translate3d(0, 0, 0) rotate(45deg);
