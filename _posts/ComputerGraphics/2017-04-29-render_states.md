@@ -2,7 +2,7 @@
 layout: post
 title: Render States(수정중)
 description:
-modified: 2017-06-30
+modified: 2017-04-30
 tags: [Computer Graphics, OpenGL]
 image:
   feature: background/Computer/6.jpg
