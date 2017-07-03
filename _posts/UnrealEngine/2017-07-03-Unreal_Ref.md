@@ -9,11 +9,11 @@ image:
   credit: unsplash
 ---
 
-오늘부터 Unreal Engine 공부를 진행하려고 한다.
-개인 용 글로 숨겨서 쓸 수가 없어서 글을 올리면서 진행 할 수 있을지 모르겠다 ㅠㅠ
+오늘부터 Unreal Engine 공부를 진행하려고 한다.  
+개인 용 글로 숨겨서 쓸 수가 없어서 글을 올리면서 진행 할 수 있을지 모르겠다 ㅠㅠ  
 티스토리랑 병행하면서 써야하나 ㅠ
 
-# Unreal Engine 4 Reference
+# Unreal Engine 4 참고 사이트
 
 1. Unreal Engine 4 Documentation
   - [https://docs.unrealengine.com/latest/KOR/index.html](https://docs.unrealengine.com/latest/KOR/index.html)
