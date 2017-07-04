@@ -1,6 +1,9 @@
+# Yujin`s Blog
 
-## Getting Started
+This is a Jekyll blog created by using [the HPSTR theme](https://github.com/mmistakes/hpstr-jekyll-theme)  
 
-HPSTR takes advantage of SCSS and data files to make customizing easier. This theme requires Jekyll 3.x and will not work with older versions properly.
+---
 
-To learn how to install and use this theme check out the [Setup Guide](https://mmistakes.github.io/hpstr-jekyll-theme/theme-setup/) for more information.
+## License
+
+This theme is free and open source software, distributed under the [The MIT License](https://github.com/mmistakes/hpstr-jekyll-theme/blob/master/LICENSE). So feel free to to modify this theme to suit your needs. 

@@ -109,6 +109,30 @@ body {
 		margin: 0 auto;
 		text-align: center;
 	}
+	.header-title-down{
+		position: absolute;
+		left: 1px;
+		bottom: 5%;
+		font-size: 3em;
+		color: #FFFFFF;
+		height: 1em;
+		width: 100%;
+
+		@media #{$small} {
+			font-size: 3em;
+		}
+		@media #{$medium} {
+			font-size: 5em;
+		}
+		@media #{$large} {
+			font-size: 5em;
+		}
+		
+		a.down{
+			color: #FFFFFF;
+		}
+
+	}
 	h1 {
 		margin: 10px;
 		font-weight: 700;
@@ -171,7 +195,7 @@ body {
 }
 
 // Feature Image height on Front Page
-#post-index{
+#post-index {
 	&.feature .header-title {
 		height: $front-page-feature-image-height;
 	}
