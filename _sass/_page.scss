@@ -94,7 +94,9 @@ body {
 		color: lighten($base-color, 20);
 	}
 }
-
+h2.entry-subtitle{
+	text-transform: none;
+}
 .feature .header-title {
 	position: absolute;
 	top: 0;
