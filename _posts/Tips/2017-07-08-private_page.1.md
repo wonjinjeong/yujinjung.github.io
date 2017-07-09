@@ -2,6 +2,7 @@
 layout: post
 title: Github private page 
 description: 
+published: false
 modified: 2017-07-09
 tags: [Tips]
 image:
@@ -72,7 +73,25 @@ image:
 
 위의 방식을 사용할 경우 저장소 전체가 private 설정되어 숨겨지기 때문에 public 저장소는 노출시키고 싶을 경우에 해당 방법을 사용하면 좋을 것 같다.  
 
-1. private markdown용 저장소를 만든다.  
-2. private page를 사용하고자 할 때에는 private 저장소에서 markdown을 작성하여 업로드하고 public 저장소에는 link를 첨부하는 page를 작성한다.  
+1. 사용하고 있는 저장소(public)를 복제하여 private 저장소로 만든다.  
+2. public page에 remote 를 추가하여 public page를 업로드 할 때는 public 저장소와 private 저장소 두 곳에 동시에 업로드한다.  
+3. private page를 사용하고자 할 때에는 private 저장소에서 pull하여 동기화하고 markdown을 작성하여 private 저장소에만 업로드하고 public 저장소에는 link를 첨부하는 page를 작성한다.  
+
+### remote 를 추가하는 방법 (public page에서 작성)
+```
+git remote add <저장소별명> 저장소주소
+git remote -v 로 확인
+
+> git remote add private https://github.com/UjinJung/ujinjung.github.io_private.git
+> git remote -v
+origin  https://github.com/UjinJung/ujinjung.github.io.git (fetch)
+origin  https://github.com/UjinJung/ujinjung.github.io.git (push)
+private https://github.com/UjinJung/ujinjung.github.io_private.git (fetch)
+private https://github.com/UjinJung/ujinjung.github.io_private.git (push)
+
+// 두 곳에 push 할 때 이런식으로 진행한다.
+> git push origin master  // public repository
+> git push private master // private repository
+```
 
 
