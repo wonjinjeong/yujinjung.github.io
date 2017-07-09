@@ -2,6 +2,7 @@
 layout: post
 title: Effective C++_#3
 description: "const를 자주 사용하자"
+published: false
 modified: 2017-07-05
 tags: [C++]
 image:
@@ -48,7 +49,45 @@ const char * const p = greeting;
 ## STL Iterator
 
 - 포인터를 본뜬 것이기 때문에, 기본적인 동작 원리가 T* 포인터와 비슷하다.
-- Iterator 앞에 붙는 const는 T* const와 의미가 동일하다.
-- 
+- const iterator 는 T* const 와 의미가 동일하다.
+  - 가리키는 대상의 데이터를 변경 가능
+- const_iterator 는 const T* 와 의미가 동일하다.
+  - 가리키는 대상을 변경 가능
+
+```cpp
+std::vector<int> vec;
+
+const std::vector<int>::iterator iter = vec.begin();
+*iter = 10; // iter가 가리키는 대상을 변경한다.
+++iter;     // iter는 상수이기 때문에 변경이 불가하다.
+
+std::vector<int>::const_iterator iter = vec.begin();
+*iter = 10; // *iter가 상수이기 때문에 변경이 불가하다. 
+++iter;     // iter 값은 상수가 아니기 때문에 변경이 가능하다.
+```
+
+<br/>
+
+---
+
+## 함수 선언
+
+### 위치
+
+- 함수 반환 값
+- 각각의 매개 변수
+- 멤버 함수
+- 함수 전체
+
+### 멤버 함수
+
+- 해당 멤버 함수가 상수 객체에 대해 호출 될 함수라는 것을 알린다.
+- 중요한 이유
+  - 클래스의 인터페이스를 이해하기 좋게 하기 위해서
+    - 그 클래스로 만들어진 객체를 변경할 수 있는 함수는 무엇이고 변경할 수 없는 함수는 무엇인가를 사용자 쪽에서 알기 위해서
+  - 상수 객체를 사용하기 위해서
+    - 코드의 성능을 높이기 위해 객체를 전달할 때에 '상수 객체에 대한 참조자'로 전달하는 데 그 때에 필요한 것이 const 멤버 함수
+- 특징
+  - 멤버 변수의 값을 바꾸지 않는다.
 
 ---

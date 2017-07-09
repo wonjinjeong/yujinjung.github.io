@@ -2,6 +2,7 @@
 layout: post
 title: Effective C++_#2
 description: "#define 대신 const, enum, inline을 사용하자"
+published: false
 modified: 2017-07-05
 tags: [C++]
 image:
