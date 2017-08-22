@@ -2,8 +2,8 @@
 layout: post
 title: Effective C++ Link
 description: ""
-published: false
-modified: 2017-07-05
+published: true
+modified: 2017-08-22
 tags: [C++]
 image:
   feature: background/Computer/5.jpg
