@@ -65,13 +65,15 @@ pointer가 가리키는 **DATA의 상수성**
 ```cpp
 std::vector<int> vec;
 
+// iter는 T* const처럼 동작합니다
 const std::vector<int>::iterator iter = vec.begin();
 *iter = 10; // iter가 가리키는 대상을 변경한다.
 ++iter;     // iter는 상수이기 때문에 변경이 불가하다.
 
-std::vector<int>::const_iterator iter = vec.begin();
-*iter = 10; // *iter가 상수이기 때문에 변경이 불가하다. 
-++iter;     // iter 값은 상수가 아니기 때문에 변경이 가능하다.
+// cIter는 T* const처럼 동작합니다
+std::vector<int>::const_iterator cIter = vec.begin();
+*cIter = 10; // *cIter가 상수이기 때문에 변경이 불가하다. 
+++cIter;     // iter 값은 상수가 아니기 때문에 변경이 가능하다.
 ```
 
 <br/>
@@ -87,15 +89,59 @@ std::vector<int>::const_iterator iter = vec.begin();
 - 멤버 함수
 - 함수 전체
 
-### 멤버 함수
+---
+
+## 멤버 함수 - p62
 
 - 해당 멤버 함수가 상수 객체에 대해 호출 될 함수라는 것을 알린다.
-- 중요한 이유
+- 위의 내용이 중요한 이유
   - 클래스의 인터페이스를 이해하기 좋게 하기 위해서
     - 그 클래스로 만들어진 객체를 변경할 수 있는 함수는 무엇이고 변경할 수 없는 함수는 무엇인가를 사용자 쪽에서 알기 위해서
   - 상수 객체를 사용하기 위해서
     - 코드의 성능을 높이기 위해 객체를 전달할 때에 '상수 객체에 대한 참조자'로 전달하는 데 그 때에 필요한 것이 const 멤버 함수
+    - const 키워드의 유무를 통해 멤버 함수들의 **오버로딩**이 가능하다
+    - 상수 객체가 생기는 경우는 ( 상수 객체에 대한 포인터 | 참조자 로 객체가 전달될 때 ) 이다
+  
+    
 - 특징
   - 멤버 변수의 값을 바꾸지 않는다.
+
+### 멤버 함수가 상수 멤버라는 것의 의미?
+여기에는 두 가지의 큰 개념이 자리 잡고 있다  
+* 비트 수준 상수성 (bitwise constness) / 물리적 상수성 (physical constness)
+* 논리적 상수성(logical constness)
+
+#### 비트 수준 상수성
+어떤 멤버 함수가 그 객체의 어떤 데이터 멤버도 건드리지 않아야 그 멤버 함수가 **'const'**임을 인정하는 개념이다.
+- static member는 제외
+- C++ 에서 정의하고 있는 상수성이다
+
+##### 예외
+```cpp
+class CTextBlock {
+public:
+  ...
+  char& operator[] (std::size_t position) const
+  { return pText[position]; }
+
+private:
+  char *pText;
+};
+
+// 이후 문제가 되는 코드
+const CTextBlock cctb("Hello");
+char *pc = &cctb[0];
+
+*pc = 'J';
+```
+
+위의 코드를 보면 **operator[]** 함수의 **반환 값**에는 const가 없고 **함수**에만 const가 들어가있다.  
+해당 함수 자체만 놓고 본다면 함수에만 const가 붙어있기 때문에 함수 안에서 값의 변경이 이루어지는 지만 보면 된다.  
+그래서 살펴보면 해당 함수는 pText 값을 직접적으로 변경하는 것이 아닌 반환하고 있기 때문에 비트 수준의 상수성을 만족한다고 볼 수 있다.  
+하지만 이후 문제가 되는 코드를 살펴보면  
+pc에 포인터를 넘겨주고 있는 것을 볼 수 있는 데 **operator[]** 함수에서 반환 값을 const로 지정하지 않았기때문에 pc가 const가 아님에도 문제를 일으키지 않는다.  
+그 후 pc 가 값을 변경하더라도 **어떠한 문제도 발생하지 않음**을 발견할 수 있는 데  
+이러한 비트 수준 상수성의 논리적 오류로 인해 보완책으로 생겨난 것이 **논리적 상수성**이다
+
 
 ---
