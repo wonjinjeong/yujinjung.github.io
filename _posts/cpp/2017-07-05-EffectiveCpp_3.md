@@ -116,7 +116,7 @@ std::vector<int>::const_iterator cIter = vec.begin();
 - static member는 제외
 - C++ 에서 정의하고 있는 상수성이다
 
-##### 예외
+#### 예외
 ```cpp
 class CTextBlock {
 public:
@@ -143,5 +143,39 @@ pc에 포인터를 넘겨주고 있는 것을 볼 수 있는 데 **operator[]** 
 그 후 pc 가 값을 변경하더라도 **어떠한 문제도 발생하지 않음**을 발견할 수 있는 데  
 이러한 비트 수준 상수성의 논리적 오류로 인해 보완책으로 생겨난 것이 **논리적 상수성**이다
 
+#### 코드 중복을 피하는 법
+캐스팅을 이용한다
+
+```cpp
+class TextBlock {
+public:
+  ...
+  const char& operator[](std::size_t position) const
+  {
+    ...
+    return text[position];
+  }
+
+  char& operator[](std::size_t position)
+  {
+    return 
+      const_cast<char&>{  // const 떼어내는 cast
+        // cosnt 붙이는 cast
+        static_cast<const TextBlock&> (*this)[position];
+      };
+  }
+
+  ...
+
+};
+```
+
+
+---
+
+### 이것만은 잊지 말자!!
+* const를 붙여 선언하던 컴파일러가 사용상의 에러를 잡아내는 데 도움을 줍니다. const는 어떤 유효범위에도 있는 객체에도 붙을 수 잇으며, 함수 매개변수 및 반환 타입에도 붙을 수 있으며, 멤버 함수에도 붙을  수 있습니다.
+* 컴파일러 쪽에서 보면 비트수준 상수성을 지켜야 하지만, 우리는 논리적인 상수성을 사용해서 프로그래밍 해야 합니다.
+* 상수 멤버 및 비상수 멤버 함수가 기능적으로 서로 똑같게 구현되어 있을 경우에는 코드 중복을 피하는 것이 좋은 데, 이 때 비상수 버전이 상수 버너을 호출하도록 만들어라.
 
 ---
