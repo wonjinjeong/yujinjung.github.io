@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Effective C++_#4
+title: Effective C++_#5
 description: "객체를 사용하기 전에 반드시 그 객체를 초기화하자"
 published: false
 modified: 2017-07-05

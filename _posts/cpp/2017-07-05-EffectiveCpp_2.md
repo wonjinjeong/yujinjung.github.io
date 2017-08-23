@@ -3,7 +3,7 @@ layout: post
 title: Effective C++_#2
 description: "#define 대신 const, enum, inline을 사용하자"
 published: false
-modified: 2017-07-05
+modified: 2017-08-22
 tags: [C++]
 image:
   feature: background/Computer/3.jpg
@@ -15,8 +15,8 @@ image:
 ---
 
 # #define을 쓰려거든 const, enum, inline을 떠올리자
-
-## 이유
+<br/>
+## #define 보다 const, enum, inline을 사용해야하는 이유
 
 ```cpp
 #define ASPECT_RATIO 123.456
@@ -27,12 +27,12 @@ const double Aspect_Ratio = 123.456;
 #### 위 코드를 기준으로 설명하면
 
 ### Error msg 로 인한 혼란
-
-#define 같은 것의 경우 preprocessor 단계에서 전부 치환이 되어버리기 때문에 ASPECT_RATIO가 Compiler가 쓰는 Symbol table에 들어가지 않는다. 그래서 만약 **Error가 발생 할 시에** Error msg로 ASPECT_RATIO가 아닌 123.456을 표시하기 때문에 혼란이 생길 수 있다.
+#define 같은 것의 경우 preprocessor 단계에서 전부 치환이 되어버리기 때문에 ASPECT_RATIO가 Compiler가 쓰는 Symbol table에 들어가지 않는다.  
+그래서 만약 **Error가 발생 할 시에** Error msg로 ASPECT_RATIO가 아닌 123.456을 표시하기 때문에 혼란이 생길 수 있다.  
 
 ### 코드 크기
-위의 코드처럼 부동소수점 실수 타입일 경우에는 const를 이용하는 것이 코드의 크기를 줄일 수 있다.
-매크로의 경우 preprocessor 단계에서 다 치환하기 대문에 코드안에 실수들의 사본이 **나온 만큼 들어간다.**
+위의 코드처럼 부동소수점 실수 타입일 경우에는 const를 이용하는 것이 코드의 크기를 줄일 수 있다.  
+매크로의 경우 preprocessor 단계에서 다 치환하기 대문에 코드안에 실수들의 사본이 **나온 만큼 들어간다.**  
 const를 이용한 경우 해당 상수가 여러번 쓰이더라도 사본은 **딱 한 개**만 생긴다.  
 
 <br/>
@@ -41,22 +41,22 @@ const를 이용한 경우 해당 상수가 여러번 쓰이더라도 사본은 *
 
 ## #define을 상수로 교체할 때 조심할 점
 
-```cpp
-const std::string myName("Yujin");
-```
+<br/>
 
 ### const pointer를 정의하는 경우
-  - 상수를 정의 할 때 대개 헤더파일에 넣는 것이 보통이기 때문에 포인터는 꼭 const로 선언해주고, 포인터가 가리키는 대상까지 const로 선언하는 것이 보통이다.
+상수를 정의 할 때 대개 **헤더파일**에 넣는 것이 보통이기 때문에 **포인터**는 꼭 const로 선언해주고, 포인터가 가리키는 대상까지 const로 선언하는 것이 보통이다.
 
 ```cpp
-const std::string myName("Yujin");
+// 포인터와 가리키는 대상까지 const로 선언
+const char* const authorName = "Yujin";
+const std::string authorName("Yujin");
 ```
 
 <br/>
 
-### class member로 상수를 정의하는 경우
-  - 어떤 상수의 범위를 **class**로 한정하고자 할 때 사용한다.
-  - 그 상수의 사본 개수가 **한 개를 넘지 못하게** 하고 싶다면 **static** member로 만들어야한다.
+### 클래스 멤버로 상수를 정의하는 경우
+어떤 상수의 범위를 **class**로 한정하고자 할 때 사용한다.
+그 상수의 사본 개수가 **한 개를 넘지 못하게** 하고 싶다면 **static** member로 만들어야한다.
 
 ```cpp
 // header file
