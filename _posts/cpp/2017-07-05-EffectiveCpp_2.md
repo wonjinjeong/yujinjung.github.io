@@ -81,9 +81,6 @@ const int GamePlayer::NumTurns;
 Static member로 만들어지는 정수류(각종 정수 타입, char, bool 등) 타입의 클래스 내부 상수는 선언만 해도 무방하다.  
 <br/>
 
-
-<br/>
-
 #### 클래스 상수의 주소가 필요하거나 정의를 요구하는 경우
 클래스 상수의 주소를 구하거나 주소를 구하지 않는데도 컴파일러가 잘못 정의되어서 주소를 요구하는 경우 별도의 정의를 제공해야 한다.  
 클래스 상수의 정의는 *헤더 파일이 아닌* **구현 파일에 둡니다**  
@@ -103,37 +100,43 @@ const int GamePlayer::NumTurns;
 클래스 컴파일 도중에 클래스 상수의 값이 필요할 때
 
 ```cpp
+// Header FILE
 class GamePlayer {
 private:
   static const int Numturns;
   int scores[NumTurens];
 };
 
+// CPP FILE
 const int GamePlayer::Numturns = 5;
 ```
-
-위의 초기값 문제로 선언이 아닌 정의할 때에 초기값을 주게되면 클래스 컴파일 도중에 Static member의 값을 요청할 수 없어 오류가 발생 할 수 있다.  
-이에 대한 해결책으로 enum hack(나열자 둔갑술)이 있다.
-
-    ```cpp
-    // enum hack
-
-    class GamePlayer {
-    private:
-      enum { NumTurns = 5 };
-
-      int scores[NumTurns];
-    }
-    ```
 
 <br/>
 
 ---
 
-## enum hack
-동작 방식이 const보다는 #define에 가깝다.
-  - 정수 상수를 가지고 주소를 얻거나 참조자를 쓰는 것이 싫다면 사용할 것
-상당히 많은 코드에서 쓰이고 있기 때문에 눈에 익힐 것
+## ENUM HACK
+
+위의 초기값 문제로 선언이 아닌 정의할 때에 초기값을 주게되면 클래스 컴파일 도중에 Static member의 값을 요청할 수 없어 오류가 발생 할 수 있다.  
+이에 대한 해결책으로 enum hack(나열자 둔갑술)이 있다.
+
+```cpp
+// enum hack
+
+class GamePlayer {
+private:
+  enum { NumTurns = 5 };
+
+  int scores[NumTurns];
+}
+```
+
+* 동작 방식이 const보다는 #define에 가깝다  
+  * 만약 선언한 정수 상수를 가지고 다른 사람이 주소를 얻는다거나 참조자를 쓰는 것이 마음에 들지 않는다면 enum을 사용하는 것이 매우 효율적입니다.  
+  // 왜냐하면 enum은 설명한 것처럼 const보다 #define에 가깝기 때문이며  
+  // **const의 주소 값을 취하는 것은 합법이지만 #define 및 enum의 주소값을 취하는 것은 불법입니다**
+* 정수 상수를 가지고 주소를 얻거나 참조자를 쓰는 것이 싫다면 사용할 것  
+* 상당히 많은 코드에서 쓰이고 있기 때문에 눈에 익힐 것  
 
 <br/>
 
