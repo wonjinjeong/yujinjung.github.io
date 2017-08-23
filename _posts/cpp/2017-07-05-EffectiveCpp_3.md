@@ -3,7 +3,7 @@ layout: post
 title: Effective C++_#3
 description: "const를 자주 사용하자"
 published: false
-modified: 2017-07-05
+modified: 2017-08-24
 tags: [C++]
 image:
   feature: background/Computer/4.jpg
@@ -40,7 +40,15 @@ char * const p = greeting;
 const char * const p = greeting;
 ```
 
-- 포인터 왼쪽의 const는 pointer가 가리키는 data의 상수성을 오른쪽의 const는 pointer의 상수성을 나타낸다.
+포인터(*) 왼쪽의 const는 pointer가 가리키는 **data의 상수성**을 오른쪽의 const는 **pointer의 상수성**을 나타낸다.
+
+### * 를 기준으로
+
+#### 왼쪽
+pointer가 가리키는 **DATA의 상수성**
+
+#### 오른쪽
+**POINTER의 상수성**
 
 <br/>
 
