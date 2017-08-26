@@ -156,51 +156,65 @@ public:
   ...
 };
 extern FileSystem tfs;
+
+// 위 객체를 사용하는 객체(클래스)
+class Directory {
+public:
+    Directory( params );
+    ...
+};
+// Constructor
+Directory::Directory( params )
+{
+    ...
+    std::size_t disks = tfs.numDisks(); // tfs 사용
+    ...
+}
+
+// 문제 발생
+Directory tempDir(params);
+
+// tfs가 tempDir보다 먼저 초기화되지 않으면 문제 발생
+// 소스 파일도 다르고 제작자도 다르다고 가정
+// 해결을 위해서는 확실하게 tfs가 tempDir보다 먼저 초기화 된다는 것을 알아야함
 ```
 
 ```cpp
 // 해결이 된 코드
+class FileSystem { ... };  // 이전과 같은 코드
+
+FileSystem& tfs()
+{
+    // 지역 정적 객체(함수 안)를 정의하고 초기화 함
+    // 그리고 참조자로 반환을 함
+    static FileSystem fs;
+    return fs;
+}
+
+class Directory { ... };
+
+Directory::Directory( params )
+{
+    ...
+    // tfs 를 tfs()로 변경
+    std::size_t disks = tfs().numDisks();
+    ...
+}
+
+Directory& tempDir()
+{
+    static Directory td;
+    return td;
+}
 ```
 
 ---
 
+## 이것만은 잊지 말자!
+- [기본 제공 타입의 객체는 직접 손으로 초기화합니다. 경우에 따라 저절로 되기도 하고 안되기도 하기 때문입니다.](https://github.com/UjinJung/ujinjung.github.io/blob/master/_posts/cpp/2017-08-22-EffectiveCpp_4.md#객체를-사용하기-전에-반드시-그-객체를-초기화하자)
+- [생성자에서는 데이터 멤버에 대한 대입문을 생성자 본문 내부에 넣는 방법으로 멤버를 초기화하지 **말고**, **멤버 초기화 리스트를 즐겨 사용**합시다](https://github.com/UjinJung/ujinjung.github.io/blob/master/_posts/cpp/2017-08-22-EffectiveCpp_4.md#해결-방법)
+[그리고 초기화 리스트에 데이터 멤버를 나열할 때는 클래스에 각 데이터 멤버가 **선언된 순서**와 똑같이 나열합시다](https://github.com/UjinJung/ujinjung.github.io/blob/master/_posts/cpp/2017-08-22-EffectiveCpp_4.md#객체를-구성하는-데이터의-초기화-순서)
+- [여러 번역 단위에 있는 비지역 정적 객체들의 초기화 순서 문제는 피해서 설계해야 합니다. 비지역 정적 객체를 지역 정적 객체로 바꾸면 됩니다](https://github.com/UjinJung/ujinjung.github.io/blob/master/_posts/cpp/2017-08-22-EffectiveCpp_4.md#비지역-정적-객체의-초기화-순서-문제점)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br>
+---
