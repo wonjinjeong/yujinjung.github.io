@@ -11,6 +11,10 @@ tags: [C++]
 
 ---
 
+모든 객체 하나하나가 세상에 하나밖에 없다고 가정해보자  
+그 상태에서는 복사가 진행되어서는 안된다(세상에 하나밖에 없기 때문에 복제가 불가능)  
+하지만 cpp의 경우 [5에서 설명했듯이](https://github.com/UjinJung/ujinjung.github.io/blob/master/_posts/cpp/2017-08-26-EffectiveCpp_5.md) 기본생성자/복사생성자/복사대입연산자/소멸자 등이 자동으로 생성되기 때문에  
+원치 않더라도 별다른 조치를 취하지 않을 경우에는 복사가 진행된다 
 ```cpp
 class HomeForSale { ... };
 
@@ -25,6 +29,9 @@ HomeForSale h3(h1);
 // h2를 복사하려 하는데 복사가 되면 안된다
 h1 = h2;
 ```
+
+자동으로 생성되는 함수의 경우 모두 public 멤버가 된다  
+하지만 꼭 public 멤버로 선언해야한다는 뜻은 아니다
 
 ```cpp
 class HomeForSale {
@@ -47,7 +54,11 @@ protected:
 private:
     Uncopyable(const Uncopyable&);  // 복사는 방지
     Uncopyable& operator=(const Uncopyable&);
-}
+};
+
+class HomeForSale: private Uncopyable {
+    ...
+};
 ```
 
 
