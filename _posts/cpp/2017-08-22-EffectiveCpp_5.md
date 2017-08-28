@@ -34,4 +34,8 @@ public:
 
     Empty& operator=(const Empty& rhs) { ... }  // 복사 대입 연산자
 };
+
+Empty e1;
+Empty e2(e1);
+e2 = e1;
 ```
