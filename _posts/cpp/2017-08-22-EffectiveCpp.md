@@ -39,3 +39,6 @@ image:
 
 - [객체의 모든 부분을 빠짐없이 복사하자](https://github.com/UjinJung/ujinjung.github.io/blob/master/_posts/cpp/2017-08-28-EffectiveCpp_12.md)
 
+### 3장 자원 관리
+
+- [자원 관리에는 객체가 그만!](https://github.com/UjinJung/ujinjung.github.io/blob/master/_posts/cpp/2017-08-28-EffectiveCpp_13.md)
