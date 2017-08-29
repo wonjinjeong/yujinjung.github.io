@@ -11,6 +11,75 @@ tags: [C++]
 
 ---
 
+# operator= 에서는 자기 대입에 대한 처리가 빠지지 않도록 하자
+
+## 자기대입
+
+```cpp
+class Widget { ... };
+
+Widget w;
+...
+w = w;
+
+// 예를 들면
+// i 랑 j 가 같으면????
+a[i] = a[j];
+
+// 가리키는 대상 같으면????
+*px = *py;
+```
+ 
+## 문제가 발생하는 코드
+
+```cpp
+class Bitmap { ... };
+
+class Widget {
+    ...
+
+private:
+    Bitmap *pb;
+};
+
+Widget& Widget::operator= (const Widget& rhs)
+{
+    delete pb;
+    pb = new Bitmap(*rhs.pb);
+
+    return *this;
+}
+// 근데 위에서 pb랑 rhs.pb랑 같은 거면??
+// 자기대입 한거면??
+```
+* pb랑 rhs.pb랑 같은거면?!
+* 동시에 delete 해버림..
+
+### 예방 1
+```cpp
+Widget& Widget::operator= (const Widget& rhs)
+{
+    if(this == rhs) return *this;
+
+    delete pb;
+    pb = new Bitmap(*rhs.pb);
+
+    return *this;
+}
+```
+
+### 예방 2
+```cpp
+Widget& Widget::operator= (const Widget& rhs)
+{
+    Bitmap *pOrig = pb;
+    pb = new Bitmap(*rhs.pb);
+    delete pOrig;
+
+    return *this;
+}
+```
+
 ---
 
 ## 이것만은 잊지말자
