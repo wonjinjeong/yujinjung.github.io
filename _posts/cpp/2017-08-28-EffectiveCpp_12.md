@@ -11,6 +11,33 @@ tags: [C++]
 
 ---
 
+# 객체의 모든 부분을 빠짐없이 복사하자
+- 기본으로 제공되어지는 복사 함수를 사용할 경우에는 멤버 변수 추가 유무에 상관없이 **모두 빠짐없이** 복사를 진행하여 준다.  
+- 하지만 복사 함수를 새로 정의하는 순간 그러한 것이 사라지고 모든 것을 사용자가 직접 복사를 해주어야 한다.
+- 때문에 까먹고 빼먹게 되어 **부분복사**로 진행되는 경우가 있다.
+- 그렇기 때문에 부분 복사가 되지 않도록 각별히 유의하여 모두 복사 할 수 있도록 한다.
+
+## 파생 클래스 일 경우에는 기본 클래스 초기화까지 신경을 쓰자
+```cpp
+// priority 는 멤버함수
+// PriorityCustomer = Derived / Customer = Base
+PriorityCustomer::PriorityCustomer(const PriorityCustomer& rhs)
+: Customer(rhs), priority(rhs.priority)
+{
+    log~~;
+}
+
+PriorityCustomer& PriorityCustomer::operator=(const PriorityCustomer& rhs)
+{
+    log ~;
+
+    Customer::operator=(rhs);
+    priority = rhs.priority;
+
+    return *this;
+}
+```
+
 ---
 
 ## 이것만은 잊지말자
