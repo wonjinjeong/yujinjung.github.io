@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Effective C++_#13
-description: ""
+description: "자원 관리에는 객체가 그만!!"
 published: false
 modified: 2017-08-29
 tags: [C++]
@@ -23,6 +23,7 @@ Resource(자원)이란 사용을 일단 마치고 난 후엔 시스템에 돌려
 6. 네트워크 소켓
 
 가져와서 **다** 썼으면 해제해야, 즉 놓아 주어야 한다 는 뜻
+
 
 ---
 
