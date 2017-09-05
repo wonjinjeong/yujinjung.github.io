@@ -32,7 +32,14 @@ Resource(자원)이란 사용을 일단 마치고 난 후엔 시스템에 돌려
 Investment
 
 ### Derived Class
+투자 클래스가 파생되어 있다
 
+
+
+
+
+
+<br/>
 
 ---
 
