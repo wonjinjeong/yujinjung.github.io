@@ -43,6 +43,7 @@ Investment에서 파생된 클래스의 객체를 사용자가 얻어내는 용�
 // 이 객체의 해제는 호출자 쪽에서 직접해야 한다.
 Investment* createInvestment();
 
+// 작성 코드
 void f()
 {
     // 팩토리 함수 
@@ -52,10 +53,24 @@ void f()
     delete pInv;
 }
 
+// 문제가 될 수 있는 곳
 void f()
+{
+    // 팩토리 함수 
+    Investment *pInv = createInvestment();
 
+    // ... (중간코드)에 return 이 들어있는 경우 
+    // delete 안하고 나가버리니까;;;;;
+
+    // ... (중간코드)에서 예외가 발생하여 던져버리는 경우
+    // 역시 delete 안함
+    ...
+
+    // create 
+
+    delete pInv;
+}
 ```
-
 
 
 
@@ -64,4 +79,4 @@ void f()
 ---
 
 ## 이것만은 잊지말자
-- 
+- 잊지마
