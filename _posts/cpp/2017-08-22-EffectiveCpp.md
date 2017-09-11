@@ -16,7 +16,7 @@ image:
 
 - [기회가 있을 떄마다 Const를 사용하자](https://github.com/UjinJung/ujinjung.github.io/blob/master/_posts/cpp/2017-07-05-EffectiveCpp_3.md)
 
-- [객체를 사용하기 전에 반드시 그 객체를 초기화하자](https://github.com/UjinJung/ujinjung.github.io/blob/master/_posts/cpp/2017-07-05-EffectiveCpp_4.md)
+- [객체를 사용하기 전에 반드시 그 객체를 초기화하자](https://github.com/UjinJung/ujinjung.github.io/blob/master/_posts/cpp/2017-08-22-EffectiveCpp_4.md)
 
 ### 2장 생성자 소멸자 및 대입 연산자
 
