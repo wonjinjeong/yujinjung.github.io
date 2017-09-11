@@ -20,7 +20,7 @@ image:
 
 ### 2장 생성자 소멸자 및 대입 연산자
 
-- [C++가 은근슬쩍 만들어 호출해 버리는 함수들에 촉각을 세우자](https://github.com/UjinJung/ujinjung.github.io/blob/master/_posts/cpp/2017-08-22-EffectiveCpp_5.md)
+- [C++가 은근슬쩍 만들어 호출해 버리는 함수들에 촉각을 세우자](https://github.com/UjinJung/ujinjung.github.io/blob/master/_posts/cpp/2017-08-26-EffectiveCpp_5.md)
 
 - [컴파일러가 만들어낸 함수가 필요없으면 확실히 이들의 사용을 금해버리자	
 ](https://github.com/UjinJung/ujinjung.github.io/blob/master/_posts/cpp/2017-08-28-EffectiveCpp_6.md)
