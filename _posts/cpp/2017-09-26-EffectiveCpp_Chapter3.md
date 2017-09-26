@@ -10,7 +10,7 @@ tags: [C++]
 # Chapter 3 
 ## 자원 관리
 
-### 항목13 : [자원 관리에는 객체가 그만]()
+### 항목13 : [자원 관리에는 객체가 그만](https://github.com/YujinJung/yujinjung.github.io/blob/master/_posts/cpp/2017-09-26-EffectiveCpp_Chapter3.md#자원-관리에는-객체가-그만)
 ### 항목1 : []()
 ### 항목1 : []()
 ### 항목1 : []()
