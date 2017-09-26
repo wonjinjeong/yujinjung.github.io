@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Effective C++_#15
+title: Effective C++_#28
 description: ""
 published: false
 modified: 2017-08-29
