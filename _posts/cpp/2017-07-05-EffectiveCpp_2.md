@@ -13,14 +13,14 @@ image:
 # Chapter 1
 ## C++에 왔으면 C++의 법에 따릅시다
 
-### 항목2 : [#define을 쓰려거든 const, enum, inline을 떠올리자](https://github.com/YujinJung/yujinjung.github.io/blob/master/_posts/cpp/2017-07-05-EffectiveCpp_2.md#define을-쓰려거든-const-enum-inline을-떠올리자)
-### 항목3 : [기회가 있을 때마다 Const를 사용하자](https://github.com/YujinJung/yujinjung.github.io/blob/master/_posts/cpp/2017-07-05-EffectiveCpp_2.md#기회가-있을-때마다-const를-사용하자)
-### 항목4 : [객체를 사용하기 전에 반드시 그 객체를 초기화하자](https://github.com/YujinJung/yujinjung.github.io/blob/master/_posts/cpp/2017-07-05-EffectiveCpp_2.md#객체를-사용하기-전에-반드시-그-객체를-초기화하자)
+### 항목2 : [#define을 쓰려거든 const, enum, inline을 떠올리자](https://github.com/YujinJung/yujinjung.github.io/blob/master/_posts/cpp/2017-07-05-EffectiveCpp_2.md#2)
+### 항목3 : [기회가 있을 때마다 Const를 사용하자](https://github.com/YujinJung/yujinjung.github.io/blob/master/_posts/cpp/2017-07-05-EffectiveCpp_2.md#3)
+### 항목4 : [객체를 사용하기 전에 반드시 그 객체를 초기화하자](https://github.com/YujinJung/yujinjung.github.io/blob/master/_posts/cpp/2017-07-05-EffectiveCpp_2.md#4)
 
 <br/>
 
 ---
-
+##### 2
 
 # #define을 쓰려거든 const, enum, inline을 떠올리자
 <br/>
@@ -176,6 +176,8 @@ inline void callWithMax(const T& a, const T& b) {
 <br>
 
 ---
+
+##### 3
 
 <br>
 
@@ -346,6 +348,8 @@ public:
 <br/>
 
 ---
+
+##### 4
 
 <br/>
 
