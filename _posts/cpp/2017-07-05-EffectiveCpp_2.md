@@ -10,6 +10,18 @@ image:
   credit: unsplash
 ---
 
+# Chapter 1
+## C++에 왔으면 C++의 법에 따릅시다
+
+### 항목2 : [#define을 쓰려거든 const, enum, inline을 떠올리자](https://github.com/YujinJung/yujinjung.github.io/blob/master/_posts/cpp/2017-07-05-EffectiveCpp_2.md#define을-쓰려거든-const-enum-inline을-떠올리자)
+### 항목3 : [기회가 있을 때마다 Const를 사용하자](https://github.com/YujinJung/yujinjung.github.io/blob/master/_posts/cpp/2017-07-05-EffectiveCpp_2.md#기회가-있을-때마다-const를-사용하자)
+### 항목4 : [객체를 사용하기 전에 반드시 그 객체를 초기화하자](https://github.com/YujinJung/yujinjung.github.io/blob/master/_posts/cpp/2017-07-05-EffectiveCpp_2.md#객체를-사용하기-전에-반드시-그-객체를-초기화하자)
+
+<br/>
+
+---
+
+
 # #define을 쓰려거든 const, enum, inline을 떠올리자
 <br/>
 ## #define 보다 const, enum, inline을 사용해야하는 이유
@@ -161,7 +173,11 @@ inline void callWithMax(const T& a, const T& b) {
 }
 ```
 
+<br>
+
 ---
+
+<br>
 
 # 기회가 있을 때마다 Const를 사용하자
 
@@ -327,9 +343,11 @@ public:
 * 컴파일러 쪽에서 보면 비트수준 상수성을 지켜야 하지만, 우리는 논리적인 상수성을 사용해서 프로그래밍 해야 합니다.
 * 상수 멤버 및 비상수 멤버 함수가 기능적으로 서로 똑같게 구현되어 있을 경우에는 코드 중복을 피하는 것이 좋은 데, 이 때 비상수 버전이 상수 버너을 호출하도록 만들어라.
 
+<br/>
+
 ---
 
-
+<br/>
 
 # 객체를 사용하기 전에 반드시 그 객체를 초기화하자
 
