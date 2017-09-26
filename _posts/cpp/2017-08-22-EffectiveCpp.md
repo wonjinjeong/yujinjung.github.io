@@ -10,6 +10,10 @@ image:
   credit: unsplash
 ---
 
+## 책에 있는 내용을 거의 그대로 쓰면서 필요한 부분을 정리하고 있기때문에 개인적인 용도로만 확인합니다.
+
+---
+
 ## 1장
 
 - [define 대신 const, enum, inline을 쓰자](https://github.com/UjinJung/ujinjung.github.io/blob/master/_posts/cpp/2017-07-05-EffectiveCpp_2.md)
