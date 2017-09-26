@@ -11,6 +11,8 @@ tags: [C++]
 
 ---
 
+# 예외가 소멸자를 떠나지 못하도록 붙들어 놓자
+
 ```cpp
 class Widget {
 public:

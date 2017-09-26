@@ -16,11 +16,11 @@ image:
 
 ## 1장
 
-- [define 대신 const, enum, inline을 쓰자](https://github.com/UjinJung/ujinjung.github.io/blob/master/_posts/cpp/2017-07-05-EffectiveCpp_2.md)
+- [define 대신 const, enum, inline을 쓰자](https://github.com/YujinJung/yujinjung.github.io/blob/master/_posts/cpp/2017-07-05-EffectiveCpp_Chapter1.md)
 
-- [기회가 있을 떄마다 Const를 사용하자](https://github.com/YujinJung/yujinjung.github.io/blob/master/_posts/cpp/2017-07-05-EffectiveCpp_2.md#기회가-있을-때마다-const를-사용하자)
+- [기회가 있을 떄마다 Const를 사용하자](https://github.com/YujinJung/yujinjung.github.io/blob/master/_posts/cpp/2017-07-05-EffectiveCpp_Chapter1.md#기회가-있을-때마다-const를-사용하자)
 
-- [객체를 사용하기 전에 반드시 그 객체를 초기화하자](https://github.com/YujinJung/yujinjung.github.io/blob/master/_posts/cpp/2017-07-05-EffectiveCpp_2.md#객체를-사용하기-전에-반드시-그-객체를-초기화하자)
+- [객체를 사용하기 전에 반드시 그 객체를 초기화하자](https://github.com/YujinJung/yujinjung.github.io/blob/master/_posts/cpp/2017-07-05-EffectiveCpp_Chapter1.md#객체를-사용하기-전에-반드시-그-객체를-초기화하자)
 
 ### 2장 생성자 소멸자 및 대입 연산자
 
