@@ -9,21 +9,65 @@ image:
   feature: background/Computer/3.jpg
   credit: unsplash
 ---
+<!-- TOC -->
+
+- [Chapter 1](#chapter-1)
+    - [C++에 왔으면 C++의 법에 따릅시다](#c%EC%97%90-%EC%99%94%EC%9C%BC%EB%A9%B4-c%EC%9D%98-%EB%B2%95%EC%97%90-%EB%94%B0%EB%A6%85%EC%8B%9C%EB%8B%A4)
+- [항목 2 : #define을 쓰려거든 const, enum, inline을 떠올리자](#%ED%95%AD%EB%AA%A9-2-define%EC%9D%84-%EC%93%B0%EB%A0%A4%EA%B1%B0%EB%93%A0-const-enum-inline%EC%9D%84-%EB%96%A0%EC%98%AC%EB%A6%AC%EC%9E%90)
+    - [#define 보다 const, enum, inline을 사용해야하는 이유](#define-%EB%B3%B4%EB%8B%A4-const-enum-inline%EC%9D%84-%EC%82%AC%EC%9A%A9%ED%95%B4%EC%95%BC%ED%95%98%EB%8A%94-%EC%9D%B4%EC%9C%A0)
+        - [Error msg 로 인한 혼란](#error-msg-%EB%A1%9C-%EC%9D%B8%ED%95%9C-%ED%98%BC%EB%9E%80)
+        - [코드 크기](#%EC%BD%94%EB%93%9C-%ED%81%AC%EA%B8%B0)
+    - [#define을 상수로 교체할 때 조심할 점](#define%EC%9D%84-%EC%83%81%EC%88%98%EB%A1%9C-%EA%B5%90%EC%B2%B4%ED%95%A0-%EB%95%8C-%EC%A1%B0%EC%8B%AC%ED%95%A0-%EC%A0%90)
+        - [const pointer를 정의하는 경우](#const-pointer%EB%A5%BC-%EC%A0%95%EC%9D%98%ED%95%98%EB%8A%94-%EA%B2%BD%EC%9A%B0)
+        - [클래스 멤버로 상수를 정의하는 경우](#%ED%81%B4%EB%9E%98%EC%8A%A4-%EB%A9%A4%EB%B2%84%EB%A1%9C-%EC%83%81%EC%88%98%EB%A5%BC-%EC%A0%95%EC%9D%98%ED%95%98%EB%8A%94-%EA%B2%BD%EC%9A%B0)
+            - [클래스 상수의 주소가 필요하거나 정의를 요구하는 경우](#%ED%81%B4%EB%9E%98%EC%8A%A4-%EC%83%81%EC%88%98%EC%9D%98-%EC%A3%BC%EC%86%8C%EA%B0%80-%ED%95%84%EC%9A%94%ED%95%98%EA%B1%B0%EB%82%98-%EC%A0%95%EC%9D%98%EB%A5%BC-%EC%9A%94%EA%B5%AC%ED%95%98%EB%8A%94-%EA%B2%BD%EC%9A%B0)
+            - [오래된 컴파일러를 사용시](#%EC%98%A4%EB%9E%98%EB%90%9C-%EC%BB%B4%ED%8C%8C%EC%9D%BC%EB%9F%AC%EB%A5%BC-%EC%82%AC%EC%9A%A9%EC%8B%9C)
+    - [ENUM HACK](#enum-hack)
+    - [매크로 함수](#%EB%A7%A4%ED%81%AC%EB%A1%9C-%ED%95%A8%EC%88%98)
+- [항목 3 : 기회가 있을 때마다 Const를 사용하자](#%ED%95%AD%EB%AA%A9-3-%EA%B8%B0%ED%9A%8C%EA%B0%80-%EC%9E%88%EC%9D%84-%EB%95%8C%EB%A7%88%EB%8B%A4-const%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EC%9E%90)
+    - [이유](#%EC%9D%B4%EC%9C%A0)
+    - [규칙](#%EA%B7%9C%EC%B9%99)
+        - [* 를 기준으로](#%EB%A5%BC-%EA%B8%B0%EC%A4%80%EC%9C%BC%EB%A1%9C)
+            - [왼쪽](#%EC%99%BC%EC%AA%BD)
+            - [오른쪽](#%EC%98%A4%EB%A5%B8%EC%AA%BD)
+    - [STL Iterator](#stl-iterator)
+    - [함수 선언](#%ED%95%A8%EC%88%98-%EC%84%A0%EC%96%B8)
+        - [위치](#%EC%9C%84%EC%B9%98)
+    - [멤버 함수 - p62](#%EB%A9%A4%EB%B2%84-%ED%95%A8%EC%88%98---p62)
+        - [멤버 함수가 상수 멤버라는 것의 의미?](#%EB%A9%A4%EB%B2%84-%ED%95%A8%EC%88%98%EA%B0%80-%EC%83%81%EC%88%98-%EB%A9%A4%EB%B2%84%EB%9D%BC%EB%8A%94-%EA%B2%83%EC%9D%98-%EC%9D%98%EB%AF%B8)
+            - [비트 수준 상수성](#%EB%B9%84%ED%8A%B8-%EC%88%98%EC%A4%80-%EC%83%81%EC%88%98%EC%84%B1)
+            - [예외](#%EC%98%88%EC%99%B8)
+            - [코드 중복을 피하는 법](#%EC%BD%94%EB%93%9C-%EC%A4%91%EB%B3%B5%EC%9D%84-%ED%94%BC%ED%95%98%EB%8A%94-%EB%B2%95)
+        - [이것만은 잊지 말자!!](#%EC%9D%B4%EA%B2%83%EB%A7%8C%EC%9D%80-%EC%9E%8A%EC%A7%80-%EB%A7%90%EC%9E%90)
+- [항목 4 : 객체를 사용하기 전에 반드시 그 객체를 초기화하자](#%ED%95%AD%EB%AA%A9-4-%EA%B0%9D%EC%B2%B4%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0-%EC%A0%84%EC%97%90-%EB%B0%98%EB%93%9C%EC%8B%9C-%EA%B7%B8-%EA%B0%9D%EC%B2%B4%EB%A5%BC-%EC%B4%88%EA%B8%B0%ED%99%94%ED%95%98%EC%9E%90)
+        - [초기화](#%EC%B4%88%EA%B8%B0%ED%99%94)
+    - [대입을 초기화와 구분하자](#%EB%8C%80%EC%9E%85%EC%9D%84-%EC%B4%88%EA%B8%B0%ED%99%94%EC%99%80-%EA%B5%AC%EB%B6%84%ED%95%98%EC%9E%90)
+        - [해결 방법](#%ED%95%B4%EA%B2%B0-%EB%B0%A9%EB%B2%95)
+    - [객체를 구성하는 데이터의 초기화 순서](#%EA%B0%9D%EC%B2%B4%EB%A5%BC-%EA%B5%AC%EC%84%B1%ED%95%98%EB%8A%94-%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%9D%98-%EC%B4%88%EA%B8%B0%ED%99%94-%EC%88%9C%EC%84%9C)
+        - [기본 클래스는 파생 클래스보다 먼저 초기화된다](#%EA%B8%B0%EB%B3%B8-%ED%81%B4%EB%9E%98%EC%8A%A4%EB%8A%94-%ED%8C%8C%EC%83%9D-%ED%81%B4%EB%9E%98%EC%8A%A4%EB%B3%B4%EB%8B%A4-%EB%A8%BC%EC%A0%80-%EC%B4%88%EA%B8%B0%ED%99%94%EB%90%9C%EB%8B%A4)
+        - [클래스 데이터 멤버는 그들이 선언된 순서대로 초기화된다.](#%ED%81%B4%EB%9E%98%EC%8A%A4-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EB%A9%A4%EB%B2%84%EB%8A%94-%EA%B7%B8%EB%93%A4%EC%9D%B4-%EC%84%A0%EC%96%B8%EB%90%9C-%EC%88%9C%EC%84%9C%EB%8C%80%EB%A1%9C-%EC%B4%88%EA%B8%B0%ED%99%94%EB%90%9C%EB%8B%A4)
+    - [비지역 정적 객체의 초기화 순서 문제점](#%EB%B9%84%EC%A7%80%EC%97%AD-%EC%A0%95%EC%A0%81-%EA%B0%9D%EC%B2%B4%EC%9D%98-%EC%B4%88%EA%B8%B0%ED%99%94-%EC%88%9C%EC%84%9C-%EB%AC%B8%EC%A0%9C%EC%A0%90)
+        - [정적 객체](#%EC%A0%95%EC%A0%81-%EA%B0%9D%EC%B2%B4)
+        - [정적 객체의 범주](#%EC%A0%95%EC%A0%81-%EA%B0%9D%EC%B2%B4%EC%9D%98-%EB%B2%94%EC%A3%BC)
+        - [구분](#%EA%B5%AC%EB%B6%84)
+        - [소멸 시기](#%EC%86%8C%EB%A9%B8-%EC%8B%9C%EA%B8%B0)
+        - [번역 단위](#%EB%B2%88%EC%97%AD-%EB%8B%A8%EC%9C%84)
+        - [그래서 문제가 뭐?](#%EA%B7%B8%EB%9E%98%EC%84%9C-%EB%AC%B8%EC%A0%9C%EA%B0%80-%EB%AD%90)
+    - [이것만은 잊지 말자!](#%EC%9D%B4%EA%B2%83%EB%A7%8C%EC%9D%80-%EC%9E%8A%EC%A7%80-%EB%A7%90%EC%9E%90)
+
+<!-- /TOC -->
 
 # Chapter 1
 ## C++에 왔으면 C++의 법에 따릅시다
-
-### 항목2 : [#define을 쓰려거든 const, enum, inline을 떠올리자](https://github.com/YujinJung/yujinjung.github.io/blob/master/_posts/cpp/2017-07-05-EffectiveCpp_Chapter1.md#define을-쓰려거든-const-enum-inline을-떠올리자)
-### 항목3 : [기회가 있을 때마다 Const를 사용하자](https://github.com/YujinJung/yujinjung.github.io/blob/master/_posts/cpp/2017-07-05-EffectiveCpp_Chapter1.md#기회가-있을-때마다-const를-사용하자)
-### 항목4 : [객체를 사용하기 전에 반드시 그 객체를 초기화하자](https://github.com/YujinJung/yujinjung.github.io/blob/master/_posts/cpp/2017-07-05-EffectiveCpp_Chapter1.md#객체를-사용하기-전에-반드시-그-객체를-초기화하자)
 
 <br/>
 
 ---
 
+# 항목 2 : #define을 쓰려거든 const, enum, inline을 떠올리자
 
-# #define을 쓰려거든 const, enum, inline을 떠올리자
 <br/>
+
 ## #define 보다 const, enum, inline을 사용해야하는 이유
 
 ```cpp
@@ -32,7 +76,7 @@ image:
 const double Aspect_Ratio = 123.456;
 ```
 
-#### 위 코드를 기준으로 설명하면
+위 코드를 기준으로 설명하면  
 
 ### Error msg 로 인한 혼란
 #define 같은 것의 경우 preprocessor 단계에서 전부 치환이 되어버리기 때문에 ASPECT_RATIO가 Compiler가 쓰는 Symbol table에 들어가지 않는다.  
@@ -179,7 +223,7 @@ inline void callWithMax(const T& a, const T& b) {
 
 <br>
 
-# 기회가 있을 때마다 Const를 사용하자
+# 항목 3 : 기회가 있을 때마다 Const를 사용하자
 
 ## 이유
 
@@ -349,7 +393,7 @@ public:
 
 <br/>
 
-# 객체를 사용하기 전에 반드시 그 객체를 초기화하자
+# 항목 4 : 객체를 사용하기 전에 반드시 그 객체를 초기화하자
 
 찜찜하게 초기화 안하고 냅둘 바에야 그냥 무조건 항상 초기화를 진행한다
 
