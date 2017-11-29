@@ -6,21 +6,10 @@ comments: false
 image:
   feature: background/Computer/4.jpg
 ---
+
 <article class="hentry">
   <h2>Category</h2>
-  <ul class="entry-meta inline-list">
-    <li><a href="{{ site.url }}/tags/#C" class="tag"><span class="term">C</span></a></li>	
-    <li><a href="{{ site.url }}/tags/#C++" class="tag"><span class="term">C++</span></a></li>	
-    <li><a href="{{ site.url }}/tags/#Compiler" class="tag"><span class="term">Compiler</span></a></li>	
-    <li><a href="{{ site.url }}/tags/#Computer Graphics" class="tag"><span class="term">Computer Graphics</span></a></li>	
-    <li><a href="{{ site.url }}/tags/#Tips" class="tag"><span class="term">Tips</span></a></li>	
-    <li><a href="{{ site.url }}/tags/#VR" class="tag"><span class="term">VR</span></a></li>	
-    <li><a href="{{ site.url }}/tags/#Unreal Engine" class="tag"><span class="term">Unreal Engine</span></a></li>	
-  </ul>
-</article>
-<!--
-<article class="hentry">
-  <h2>Tags</h2>
+
   {% capture site_tags %}{% for tag in site.tags %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
   {% assign tags_list = site_tags | split:',' | sort %}
 
@@ -30,7 +19,9 @@ image:
       <li><a href="{{ site.url }}/tags/#{{ this_word }}" class="tag"><span class="term">{{ this_word }}</span> <span class="count">{{ site.tags[this_word].size }}</span></a></li>
     {% endunless %}{% endfor %}
   </ul>
-</article>-->
+</article>
+
+
 {% for post in paginator.posts %}
 <article class="hentry">
   <header>

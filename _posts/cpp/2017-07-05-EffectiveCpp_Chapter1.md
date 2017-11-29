@@ -9,6 +9,8 @@ image:
   feature: background/Computer/3.jpg
   credit: unsplash
 ---
+### 개인적으로 정리하는 것이기 때문에 틀린 내용이 있을 수 있습니다.
+
 <!-- TOC -->
 
 - [Chapter 1](#chapter-1)

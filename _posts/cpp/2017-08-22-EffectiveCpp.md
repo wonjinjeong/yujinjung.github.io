@@ -10,9 +10,6 @@ image:
   credit: unsplash
 ---
 
-책에 있는 내용을 거의 그대로 쓰면서 필요한 부분을 정리하고 있기때문에 개인적인 용도로만 확인합니다.
-
----
 
 ## 1장
 
@@ -44,3 +41,18 @@ image:
 ### 3장 자원 관리
 
 - [자원 관리에는 객체가 그만!](https://github.com/UjinJung/ujinjung.github.io/blob/master/_posts/cpp/2017-08-28-EffectiveCpp_13.md)
+
+<br/>
+
+---
+
+책에 있는 내용을 개인적으로 정리하고 있습니다.  
+
+책의 저작권 및 기타 권한은 출판사와 지은이/옮긴이에 있습니다.  
+문제가 될 시 [ujin.jung9@gmail.com](ujin.jung9@gmail.com) 으로 메일을 주신다면 바로 삭제하겠습니다.  
+- 지은이 : Scott Meyers
+- 옮긴이 : 곽용재
+- 발행인 : 유재성
+- 발행처 : (주)피어슨에듀케이션코리아
+
+---
