@@ -50,6 +50,8 @@ image:
 
 책의 저작권 및 기타 권한은 출판사와 지은이/옮긴이에 있습니다.  
 문제가 될 시 [ujin.jung9@gmail.com](ujin.jung9@gmail.com) 으로 메일을 주신다면 바로 삭제하겠습니다.  
+
+- 제 목 : Effective C++
 - 지은이 : Scott Meyers
 - 옮긴이 : 곽용재
 - 발행인 : 유재성
