@@ -10,13 +10,47 @@ image:
   credit: unsplash
 ---
 
-DirectXMath
+작성 중
+
+<!-- TOC -->
+
+- [DirectXMath](#directxmath)
+- [Vector 형식들](#vector-%ED%98%95%EC%8B%9D%EB%93%A4)
+    - [XMVECTOR](#xmvector)
+    - [XMFLOATn](#xmfloatn)
+    - [사용법](#%EC%82%AC%EC%9A%A9%EB%B2%95)
+- [적재 및 저장 함수](#%EC%A0%81%EC%9E%AC-%EB%B0%8F-%EC%A0%80%EC%9E%A5-%ED%95%A8%EC%88%98)
+- [매개변수 전달](#%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98-%EC%A0%84%EB%8B%AC)
+    - [XMVECTOR 인스턴스를 인수로 해서 함수를 호출할 때](#xmvector-%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4%EB%A5%BC-%EC%9D%B8%EC%88%98%EB%A1%9C-%ED%95%B4%EC%84%9C-%ED%95%A8%EC%88%98%EB%A5%BC-%ED%98%B8%EC%B6%9C%ED%95%A0-%EB%95%8C)
+    - [위와 같이 전달할 수 있는 인수가 플랫폼/컴파일러 별로 다르다.](#%EC%9C%84%EC%99%80-%EA%B0%99%EC%9D%B4-%EC%A0%84%EB%8B%AC%ED%95%A0-%EC%88%98-%EC%9E%88%EB%8A%94-%EC%9D%B8%EC%88%98%EA%B0%80-%ED%94%8C%EB%9E%AB%ED%8F%BC%EC%BB%B4%ED%8C%8C%EC%9D%BC%EB%9F%AC-%EB%B3%84%EB%A1%9C-%EB%8B%A4%EB%A5%B4%EB%8B%A4)
+        - [XMVECTOR 매개변수 설정 법](#xmvector-%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98-%EC%84%A4%EC%A0%95-%EB%B2%95)
+    - [XM_CALLCONV](#xmcallconv)
+    - [생성자 에서의 XMVECTOR 매개변수 설정 법](#%EC%83%9D%EC%84%B1%EC%9E%90-%EC%97%90%EC%84%9C%EC%9D%98-xmvector-%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98-%EC%84%A4%EC%A0%95-%EB%B2%95)
+- [상수 벡터](#%EC%83%81%EC%88%98-%EB%B2%A1%ED%84%B0)
+    - [형식에 따른 사용](#%ED%98%95%EC%8B%9D%EC%97%90-%EB%94%B0%EB%A5%B8-%EC%82%AC%EC%9A%A9)
+- [중복적재된 연산자들](#%EC%A4%91%EB%B3%B5%EC%A0%81%EC%9E%AC%EB%90%9C-%EC%97%B0%EC%82%B0%EC%9E%90%EB%93%A4)
+- [기타 상수 및 함수](#%EA%B8%B0%ED%83%80-%EC%83%81%EC%88%98-%EB%B0%8F-%ED%95%A8%EC%88%98)
+- [설정 함수와 벡터 함수](#%EC%84%A4%EC%A0%95-%ED%95%A8%EC%88%98%EC%99%80-%EB%B2%A1%ED%84%B0-%ED%95%A8%EC%88%98)
+    - [설정 함수](#%EC%84%A4%EC%A0%95-%ED%95%A8%EC%88%98)
+    - [벡터 함수](#%EB%B2%A1%ED%84%B0-%ED%95%A8%EC%88%98)
+- [부동소수점 오차](#%EB%B6%80%EB%8F%99%EC%86%8C%EC%88%98%EC%A0%90-%EC%98%A4%EC%B0%A8)
+
+<!-- /TOC -->
+
+---
+
+# DirectXMath
+
 - Windows 8 이상에서 Direct3D 응용 프로그램을 위한 표준적인 3차원 수학 라이브러리
-- [SSE2]({{site.url}}{{page.url}}/#sse2) 명령 집합을 사용한다.
+- [SSE2]({{site.url}}{{page.url}}#sse2) 명령 집합을 사용한다.
 - DirectXMath.h 를 포함시키면 사용이 가능하다.
 - 추가적인 자료 형식을 사용하기 위하여 DirectXPackedVector.h 를 포함시켜야한다.
 - x64에서는 따로 SSE2를 활성화 할 필요가 없지만 x86 플랫폼을 대상으로 할 때에는 SSE2를 활성화해야한다.
   - 프로젝트 속성 > 구성 속성 > C/C++ > 코드 생성 > 고급 명령 집합 사용
+
+<br/>
+
+> SSE : Streaming SIMD Extensions 2
 
 <br/>
 
@@ -32,10 +66,10 @@ DirectXMath
 typedef __m128 XMVECTOR;
 ```
 - 차원에 상관없이 Vector일 경우 __m128을 사용한다.
-  - Vector 계산 시 SIMD의 장점이 발휘되려면 **벡터가 __m128이 되어야한다.**
+  - Vector 계산 시 SIMD의 장점이 발휘되려면 **__m128을 사용해야한다.**
   - 그래서 **2차원 3차원 벡터에서도 이 형식을 쓰며, 쓰이지 않는 성분은 0으로 설정해서 무시한다.**
-- **지역 변수나 전역 변수에는 XMVECTOR를 사용한다**
-  - 16바이트 경계에 alignment 되어야 하는데, **지역 변수** 와 **전역 변수**에서는 자동으로 이루어진다.
+- **지역 변수나 전역 변수에** XMVECTOR를 사용한다
+  - **16바이트 경계에 alignment** 되어야 하는데(128bit), 지역 변수와 전역 변수에서는 자동으로 이루어진다.
 
 <br/>
 
@@ -44,7 +78,7 @@ XMFLOAT2, XMFLOAT3, XMFLOAT4
 - 클래스 자료 멤버에는 XMFLOATn을 사용한다.
   - 저장이니까?
 
-- 계산을 할 때 **
+- 계산을 할 때
   - 계산을 할 때 XMFLOATn을 사용하면 SIMD의 장점을 취할 수 없기 때문에 XMVECTOR 형식으로 변환하여 사용한다.
   - 적재 함수
     - XMFLOATn -> XMVECTOR
@@ -104,11 +138,11 @@ struct XMFLOAT4
 <br/>
 
 ## 사용법
-1. 지역 변수나 전역 변수에는 **XMVECTOR**를 사용
-2. 클래스 자료 멤버에는 XMFLOATn을 사용
-3. 계산을 수행하기 전에 적재 함수들을 이용해서 XMFLOATn을 XMVECTOR로 변환
-4. XMVECTOR 인스턴스들로 계산을 수행
-5. 저장 함수들을 이용해서 XMVECTOR를 XMFLOATn으로 변환
+1. **지역 변수나 전역 변수**에는 **XMVECTOR**를 사용
+2. **클래스 자료 멤버**에는 **XMFLOATn**을 사용
+3. **계산을 수행하기 전**에 적재 함수들을 이용해서 **XMFLOATn을 XMVECTOR로** 변환
+4. **XMVECTOR** 인스턴스들로 **계산을 수행**
+5. 저장 함수들을 이용해서 **XMVECTOR를 XMFLOATn으로** 변환 후 저장
 
 <br/>
 
@@ -170,19 +204,20 @@ FFFGHHCCCCCCCCC..
 
 ```cpp
 inline XMMATRIX XM_CALLCONV XMMatrixTransformation2D(
-  FXMVECTOR ScalingOrigin,      // First
+  FXMVECTOR ScalingOrigin,      // First  / F
   float     ScalingOrientation,
-  FXMVECTOR Scaling,            // Second 
-  FXMVECTOR RotationOrigin,     // Third 
+  FXMVECTOR Scaling,            // Second / F 
+  FXMVECTOR RotationOrigin,     // Third  / F
   float     Rotation,
-  GXMVECTOR Translation);       // Fourth
+  GXMVECTOR Translation);       // Fourth / G
 ```
 
 <br/>
 
 ## XM_CALLCONV  
 
-SSE/SSE2 레지스터 활용을 위한 호출 규약도 컴파일러에 따른 의존성을 없애기 위해 함수 이름 앞에 XM_CALLCONV 라는 호출 규약 지시자를 붙인다.
+SSE/SSE2 레지스터 활용을 위한 호출 규약이 컴파일러에 따라 다를 수 있는 의존성을 없애기 위해 함수 이름 앞에 XM_CALLCONV 라는 호출 규약 지시자를 붙인다.
+> 생성자에서는 사용하지 않는다.
 
 <br/>
 
@@ -193,13 +228,206 @@ SSE/SSE2 레지스터 활용을 위한 호출 규약도 컴파일러에 따른 �
   - G, H 사용하지 않음
 3. CALLCONV 호출 규약 지시자 **사용 불가**
 
+<br/>
+
+> 위의 내용은 **입력 매개변수**에 해당되는 내용이며 출력의 경우 XMVECTOR는 SSE/SSE2 레지스터를 사용하지 않으므로, 그냥 XMVECTOR가 아닌 매개변수들과 동일하게 취급된다.
+
+<br/>
+
 ---
 
-### 용어 정리
-#### SSE2 
-- Streaming SIMD Extensions 2
+# 상수 벡터
 
-#####
+- const XMVECTOR에는 반드시 **XMVECTORF32**형식을 사용해야한다.  
+- 중괄호 초기화 구문을 사용할 때 XMVECTORF32 사용
+
+```cpp
+static const XMVECTORF32 g_vHalfVector = { 0.5f, 0.5f, 0.5f, 0.5f };
+static const XMVECTORF32 g_vHalfVector = { 0.0f, 0.0f, 0.0f, 0.0f };
+
+XMVECTORF32 vRightTop = {
+  vViewFrust RightSlope,
+  vViewFrust TopSlope,
+  1.0f, 1.0f
+};
+
+XMVECTORF32 vLeftBottom = {
+  vViewFrust LeftSlope,
+  vViewFrust BottomSlope,
+  1.0f, 1.0f
+};
+```
+
+XMVECTORF32는 16바이트 경계에 alignment되는 구조체로, XMVECTOR로의 변환 연산자들을 제공한다.    
+
+
+<br/>
+
+## 형식에 따른 사용
+- floating point    - XMVECTORF32
+- unsigned integer  - XMVECTORU32
+- integer           - XMVECTORI32 
+- byte              - XMVECTORU8
+
+
+> [참고](https://msdn.microsoft.com/ko-kr/library/windows/desktop/ee421019(v=vs.85).aspx)
+
+<br/>
+
+---
+
+# 중복적재된 연산자들
+
+- XMVECTOR 에는 벡터 덧셈, 뺄셈, 스칼라 곱셈을 위해 overloading 된 여러 연산자가 있다.
+
+```cpp
+XMVECTOR  XM_CALLCONV operator+  (FXMVECTOR V);
+XMVECTOR  XM_CALLCONV operator-  (FXMVECTOR V);
+
+XMVECTOR& XM_CALLCONV operator+= (XMVECTOR& V1, FXMVECTOR V2);
+XMVECTOR& XM_CALLCONV operator-= (XMVECTOR& V1, FXMVECTOR V2);
+XMVECTOR& XM_CALLCONV operator*= (XMVECTOR& V1, FXMVECTOR V2);
+XMVECTOR& XM_CALLCONV operator/= (XMVECTOR& V1, FXMVECTOR V2);
+
+XMVECTOR& XM_CALLCONV operator*= (XMVECTOR& V, float S);
+XMVECTOR& XM_CALLCONV operator/= (XMVECTOR& V, float S);
+
+XMVECTOR  XM_CALLCONV operator+  (FXMVECTOR V1, FXMVECTOR V2);
+XMVECTOR  XM_CALLCONV operator-  (FXMVECTOR V1, FXMVECTOR V2);
+XMVECTOR  XM_CALLCONV operator*  (FXMVECTOR V1, FXMVECTOR V2);
+XMVECTOR  XM_CALLCONV operator/  (FXMVECTOR V1, FXMVECTOR V2);
+XMVECTOR  XM_CALLCONV operator*  (FXMVECTOR V, float S);
+XMVECTOR  XM_CALLCONV operator*  (float S, FXMVECTOR V);
+XMVECTOR  XM_CALLCONV operator/  (FXMVECTOR V, float S);
+
+
+```
+
+> [참고](https://msdn.microsoft.com/en-us/library/windows/desktop/microsoft.directx_sdk.types.xmvector_methods(v=vs.85).aspx)
+
+<br/>
+
+---
+
+# 기타 상수 및 함수
+
+- DirectXMath 라이브러리에서는 여러 공식의 근삿값을 구할 때 유용한 다음과 같은 상수들을 정의한다.
+
+```cpp
+const float XM_PI       = 3.141592654f;
+const float XM_2PI      = 6.283...; // 2 * PI;
+const float XM_1DIVPI   = 0.318...; // 1 / PI;
+const float XM_1DIV2PI  = 0.159...; // 1 / (2 * PI);
+const float XM_PIDIV2   = 1.570...; // PI / 2;
+const float XM_PIDIV4   = 0.785...; // PI / 4;
+```
+
+<br/>
+
+- radian - degree 각도 사이 변환을 위한 인라인 함수와
+- 최솟값/최댓값 함수이다.
+
+```cpp
+inline float XMConvertToRadians(float fDegrees)
+{ return fDegrees * (XM_PI / 180.0f); }
+inline float XMConvertToDegrees(float fRadians)
+{ return fRadians * (180.0f / XM_PI); }
+
+template<typename T> inline T XMMin(T a, T b) { return (a < b) ? a : b; }
+template<typename T> inline T XMMax(T a, T b) { return (a > b) ? a : b; }
+```
+
+<br/>
+
+---
+
+# 설정 함수와 벡터 함수
+
+## 설정 함수
+
+```cpp
+// Return vector 0
+XMVECTOR XM_CALLCONV XMVectorZero();
+
+// Return vector (1, 1, 1, 1)
+XMVECTOR XM_CALLCONV XMVectorSplatOne();
+
+// Return vector (x, y, z, w)
+XMVECTOR XM_CALLCONV XMVectorSet(float x, float y, float z, float w);
+
+// Return vector (s, s, s, s)
+XMVECTOR XM_CALLCONV XMVectorReplicate(float Value);
+
+// SplatX, SplatY, SplatZ
+// 각각 (Vx, Vx, Vx, Vx), (Vy, Vy, Vy, Vy), (Vz, Vz, Vz, Vz)
+// 비슷하게 SplatOne - (1, 1, 1, 1)
+XMVECTOR XM_CALLCONV XMVectorSplatX(FXMVECTOR V);
+XMVECTOR XM_CALLCONV XMVectorSplatY(FXMVECTOR V);
+XMVECTOR XM_CALLCONV XMVectorSplatZ(FXMVECTOR V);
+```
+
+<br/>
+
+## 벡터 함수
+- 3차원 벡터에 해당되는 함수이다.
+- 3을 2나 4로 바꾸면 해당 차원의 함수가 호출된다.
+
+```cpp
+// length, length^2
+XMVECTOR XM_CALCONV XMVector3Length(FXMVECTOR V);
+XMVECTOR XM_CALCONV XMVector3LengthSq(FXMVECTOR V);
+
+// 내적, 외적
+XMVECTOR XM_CALCONV XMVector3Dot(FXMVECTOR V);
+XMVECTOR XM_CALCONV XMVector3Cross(FXMVECTOR V);
+
+// Normalize
+// (Vx/length, Vy/length, Vz/length)
+XMVECTOR XM_CALLCONV XMVector3Normalize(FXMVECTOR V);
+
+// v에 수직인 벡터를 돌려준다.
+XMVECTOR XM_CALLCONV XMVector3Orthogonal(FXMVECTOR V);
+
+// v1과 v2 사이의 각도를 돌려준다.
+XMVECTOR XM_CALLCONV XMVector3AngleBetweenVectors(FXMVECTOR V1, FXMVECTOR V2);
+
+// Normal vector를 기준으로 평행한 벡터와 수직인 벡터를 반환한다.
+void XM_CALLCONV XMVector3ComponentsFromNormal(
+  XMVECTOR* pParallel,      // [out] parallel to Normal
+  XMVECTOR* pPerpendicular, // [out] perpendicular to Normal
+  FXMVECTOR V,
+  FXMVECTOR Normal
+  );
+
+// v1 와 v2가 같은지 다른지
+bool XM_CALLCONV XMVector3Equal(FXMVECTOR V1, FXMVECTOR V2);
+bool XM_CALLCONV XMVector3NotEqual(FXMVECTOR V1, FXMVECTOR V2);
+
+```
+
+
+<br/>
+
+---
+
+# 부동소수점 오차
+
+floating point number 들을 비교 할 때에는 부동소수점의 부정확함을 고려해야한다.  
+그래서 두 부동소수점의 **상등을 판정** 할 때에는 두 수가 **근사적으로** 같은 지를 보아야한다.  
+이를 위해 허용 오차로 사용할 epsilon을 정의하고 상수로서 코드 안에 정의해둔다.
+
+```cpp
+// epsilon
+const float Epsilon = 0.001f;
+bool Equals(float lhs, float rhs)
+{
+  return fabs(lhs - rhs) < Epsilon ? true : false;
+}
+```
+
+<br/><br/>
+
+
 
 ---
 
