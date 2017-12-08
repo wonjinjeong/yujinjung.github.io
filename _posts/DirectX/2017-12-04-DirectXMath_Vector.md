@@ -3,7 +3,7 @@ layout: post
 title: DirectXMath Vector 
 description: ""
 published: true
-modified: 2017-12-05
+modified: 2017-12-08
 tags: [DirectX]
 image:
   feature: background/Computer/1.jpg
@@ -297,8 +297,6 @@ XMVECTOR  XM_CALLCONV operator/  (FXMVECTOR V1, FXMVECTOR V2);
 XMVECTOR  XM_CALLCONV operator*  (FXMVECTOR V, float S);
 XMVECTOR  XM_CALLCONV operator*  (float S, FXMVECTOR V);
 XMVECTOR  XM_CALLCONV operator/  (FXMVECTOR V, float S);
-
-
 ```
 
 > [참고](https://msdn.microsoft.com/en-us/library/windows/desktop/microsoft.directx_sdk.types.xmvector_methods(v=vs.85).aspx)
@@ -372,12 +370,12 @@ XMVECTOR XM_CALLCONV XMVectorSplatZ(FXMVECTOR V);
 
 ```cpp
 // Length, Length^2
-XMVECTOR XM_CALCONV XMVector3Length(FXMVECTOR V);
-XMVECTOR XM_CALCONV XMVector3LengthSq(FXMVECTOR V);
+XMVECTOR XM_CALLCONV XMVector3Length(FXMVECTOR V);
+XMVECTOR XM_CALLCONV XMVector3LengthSq(FXMVECTOR V);
 
 // 내적, 외적
-XMVECTOR XM_CALCONV XMVector3Dot(FXMVECTOR V);
-XMVECTOR XM_CALCONV XMVector3Cross(FXMVECTOR V);
+XMVECTOR XM_CALLCONV XMVector3Dot(FXMVECTOR V);
+XMVECTOR XM_CALLCONV XMVector3Cross(FXMVECTOR V);
 
 // Normalize
 // (Vx/length, Vy/length, Vz/length)
