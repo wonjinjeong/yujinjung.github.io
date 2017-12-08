@@ -10,30 +10,28 @@ image:
   credit: unsplash
 ---
 
-작성 중
-
 <!-- TOC -->
 
-- [DirectXMath](#directxmath)
-- [Vector 형식들](#vector-%ED%98%95%EC%8B%9D%EB%93%A4)
-    - [XMVECTOR](#xmvector)
-    - [XMFLOATn](#xmfloatn)
-    - [사용법](#%EC%82%AC%EC%9A%A9%EB%B2%95)
-- [적재 및 저장 함수](#%EC%A0%81%EC%9E%AC-%EB%B0%8F-%EC%A0%80%EC%9E%A5-%ED%95%A8%EC%88%98)
-- [매개변수 전달](#%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98-%EC%A0%84%EB%8B%AC)
-    - [XMVECTOR 인스턴스를 인수로 해서 함수를 호출할 때](#xmvector-%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4%EB%A5%BC-%EC%9D%B8%EC%88%98%EB%A1%9C-%ED%95%B4%EC%84%9C-%ED%95%A8%EC%88%98%EB%A5%BC-%ED%98%B8%EC%B6%9C%ED%95%A0-%EB%95%8C)
-    - [위와 같이 전달할 수 있는 인수가 플랫폼/컴파일러 별로 다르다.](#%EC%9C%84%EC%99%80-%EA%B0%99%EC%9D%B4-%EC%A0%84%EB%8B%AC%ED%95%A0-%EC%88%98-%EC%9E%88%EB%8A%94-%EC%9D%B8%EC%88%98%EA%B0%80-%ED%94%8C%EB%9E%AB%ED%8F%BC%EC%BB%B4%ED%8C%8C%EC%9D%BC%EB%9F%AC-%EB%B3%84%EB%A1%9C-%EB%8B%A4%EB%A5%B4%EB%8B%A4)
-        - [XMVECTOR 매개변수 설정 법](#xmvector-%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98-%EC%84%A4%EC%A0%95-%EB%B2%95)
-    - [XM_CALLCONV](#xmcallconv)
-    - [생성자 에서의 XMVECTOR 매개변수 설정 법](#%EC%83%9D%EC%84%B1%EC%9E%90-%EC%97%90%EC%84%9C%EC%9D%98-xmvector-%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98-%EC%84%A4%EC%A0%95-%EB%B2%95)
-- [상수 벡터](#%EC%83%81%EC%88%98-%EB%B2%A1%ED%84%B0)
-    - [형식에 따른 사용](#%ED%98%95%EC%8B%9D%EC%97%90-%EB%94%B0%EB%A5%B8-%EC%82%AC%EC%9A%A9)
-- [중복적재된 연산자들](#%EC%A4%91%EB%B3%B5%EC%A0%81%EC%9E%AC%EB%90%9C-%EC%97%B0%EC%82%B0%EC%9E%90%EB%93%A4)
-- [기타 상수 및 함수](#%EA%B8%B0%ED%83%80-%EC%83%81%EC%88%98-%EB%B0%8F-%ED%95%A8%EC%88%98)
-- [설정 함수와 벡터 함수](#%EC%84%A4%EC%A0%95-%ED%95%A8%EC%88%98%EC%99%80-%EB%B2%A1%ED%84%B0-%ED%95%A8%EC%88%98)
-    - [설정 함수](#%EC%84%A4%EC%A0%95-%ED%95%A8%EC%88%98)
-    - [벡터 함수](#%EB%B2%A1%ED%84%B0-%ED%95%A8%EC%88%98)
-- [부동소수점 오차](#%EB%B6%80%EB%8F%99%EC%86%8C%EC%88%98%EC%A0%90-%EC%98%A4%EC%B0%A8)
+- [DirectXMath]({{site.url}}{{page.url}}#directxmath)
+- [Vector 형식들]({{site.url}}{{page.url}}#vector-형식들)
+    - [XMVECTOR]({{site.url}}{{page.url}}#xmvector)
+    - [XMFLOATn]({{site.url}}{{page.url}}#xmfloatn)
+    - [사용법]({{site.url}}{{page.url}}#사용법)
+- [적재 및 저장 함수]({{site.url}}{{page.url}}#적재-및-저장-함수)
+- [매개변수 전달]({{site.url}}{{page.url}}#매개변수-전달)
+    - [XMVECTOR 인스턴스를 인수로 해서 함수를 호출할 때]({{site.url}}{{page.url}}#xmvector-인스턴스를-인수로-해서-함수를-호출할-때)
+    - [위와 같이 전달할 수 있는 인수가 플랫폼/컴파일러 별로 다르다.]({{site.url}}{{page.url}}#위와-같이-전달할-수-있는-인수가-플랫폼컴파일러-별로-다르다)
+        - [XMVECTOR 매개변수 설정 법]({{site.url}}{{page.url}}#xmvector-매개변수-설정-법)
+    - [XM_CALLCONV]({{site.url}}{{page.url}}#xm_callconv)
+    - [생성자 에서의 XMVECTOR 매개변수 설정 법]({{site.url}}{{page.url}}#생성자-에서의-xmvector-매개변수-설정-법)
+- [상수 벡터]({{site.url}}{{page.url}}#상수-벡터)
+    - [형식에 따른 사용]({{site.url}}{{page.url}}#형식에-따른-사용)
+- [중복적재된 연산자들]({{site.url}}{{page.url}}#중복적재된-연산자들)
+- [기타 상수 및 함수]({{site.url}}{{page.url}}#기타-상수-및-함수)
+- [설정 함수와 벡터 함수]({{site.url}}{{page.url}}#설정-함수와-벡터-함수)
+    - [설정 함수]({{site.url}}{{page.url}}#설정-함수)
+    - [벡터 함수]({{site.url}}{{page.url}}#벡터-함수)
+- [부동소수점 오차]({{site.url}}{{page.url}}#부동소수점-오차)
 
 <!-- /TOC -->
 
@@ -314,12 +312,12 @@ XMVECTOR  XM_CALLCONV operator/  (FXMVECTOR V, float S);
 - DirectXMath 라이브러리에서는 여러 공식의 근삿값을 구할 때 유용한 다음과 같은 상수들을 정의한다.
 
 ```cpp
-const float XM_PI       = 3.141592654f;
-const float XM_2PI      = 6.283...; // 2 * PI;
-const float XM_1DIVPI   = 0.318...; // 1 / PI;
-const float XM_1DIV2PI  = 0.159...; // 1 / (2 * PI);
-const float XM_PIDIV2   = 1.570...; // PI / 2;
-const float XM_PIDIV4   = 0.785...; // PI / 4;
+const float XM_PI       = 3.141592654f; // PI;
+const float XM_2PI      = 6.283...;     // 2 * PI;
+const float XM_1DIVPI   = 0.318...;     // 1 / PI;
+const float XM_1DIV2PI  = 0.159...;     // 1 / (2 * PI);
+const float XM_PIDIV2   = 1.570...;     // PI / 2;
+const float XM_PIDIV4   = 0.785...;     // PI / 4;
 ```
 
 <br/>
@@ -373,7 +371,7 @@ XMVECTOR XM_CALLCONV XMVectorSplatZ(FXMVECTOR V);
 - 3을 2나 4로 바꾸면 해당 차원의 함수가 호출된다.
 
 ```cpp
-// length, length^2
+// Length, Length^2
 XMVECTOR XM_CALCONV XMVector3Length(FXMVECTOR V);
 XMVECTOR XM_CALCONV XMVector3LengthSq(FXMVECTOR V);
 
