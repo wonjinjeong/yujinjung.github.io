@@ -3,7 +3,7 @@ layout: post
 title: Introduction of Graphics Pipeline
 description:
 modified: 2017-04-02
-tags: [Computer Graphics, OpenGL]
+tags: [OpenGL]
 image:
   feature: background/Computer/1.jpg
   credit: unsplash

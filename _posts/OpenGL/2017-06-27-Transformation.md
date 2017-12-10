@@ -3,7 +3,7 @@ layout: post
 title: Transformation
 description:
 modified: 2017-06-28
-tags: [Computer Graphics, OpenGL]
+tags: [OpenGL]
 image:
   feature: background/Computer/3.jpg
   credit: unsplash
@@ -27,7 +27,7 @@ image:
 
 ---
 
-# Translation 
+# Transition 
 
 - 이동을 진행한다.
 

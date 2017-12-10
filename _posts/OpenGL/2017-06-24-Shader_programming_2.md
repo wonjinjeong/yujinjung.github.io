@@ -3,7 +3,7 @@ layout: post
 title: Shader Programming - Uniform, Attribute
 description:
 modified: 2017-06-26
-tags: [Computer Graphics, OpenGL]
+tags: [OpenGL]
 image:
   feature: background/Computer/6.jpg
   credit: unsplash

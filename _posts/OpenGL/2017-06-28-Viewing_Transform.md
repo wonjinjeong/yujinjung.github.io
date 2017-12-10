@@ -3,7 +3,7 @@ layout: post
 title: Viewing Transform
 description:
 modified: 2017-06-29
-tags: [Computer Graphics, OpenGL]
+tags: [OpenGL]
 image:
   feature: background/Computer/4.jpg
   credit: unsplash

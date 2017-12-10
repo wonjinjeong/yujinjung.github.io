@@ -3,7 +3,7 @@ layout: post
 title: Projection Transform
 description:
 modified: 2017-06-29
-tags: [Computer Graphics, OpenGL]
+tags: [OpenGL]
 image:
   feature: background/Computer/5.jpg
   credit: unsplash
