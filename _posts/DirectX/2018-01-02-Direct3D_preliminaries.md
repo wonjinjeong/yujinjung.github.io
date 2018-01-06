@@ -16,7 +16,9 @@ image:
 - Microsoft의 DirectX API에서 3D Graphics 연산과 출력을 담당하는 부분
 - 응용 프로그램에서 GPU를 제어하고 프로그래밍하는데 쓰이는 저수준 그래픽 API
 - **Direct3D라는 간접층과 HW Driver**가 응용 프로그램과 그래픽 하드웨어 사이에 서 Direct3D 명령들을 시스템의 GPU가 이해하는 기계어로 번역한다.
+
 <br/>
+
 ---
 
 #  COM
@@ -37,6 +39,7 @@ image:
 - [MSDN Link](https://msdn.microsoft.com/ko-kr/library/br244983.aspx)
 
 <br/>
+
 ---
 
 # Texture Format
@@ -51,6 +54,7 @@ image:
 - Link : [DXGI](https://msdn.microsoft.com/en-us/library/windows/desktop/bb205075(v=vs.85).aspx) / [DXGI Format](https://msdn.microsoft.com/en-us/library/windows/desktop/mt426648(v=vs.85).aspx)
 
 <br/>
+
 * DXGI_FORMAT_R숫자G숫자B숫자A숫자_형식
 * 앞에 DXGI_FORMAT_
 * 이어서 RGBA 순으로 성분 개수 표현
@@ -71,6 +75,7 @@ image:
 * DXGI_FORMAT_R8G8B8A8_UINT
 
 <br/>
+
 ---
 
 # The Swap Chain and Page Flipping
@@ -80,6 +85,7 @@ image:
 - [OpenGL Double Buffering]({{site.url}}/EGL/#double-buffering)
 
 <br/>
+
 ---
 
 # Depth Buffering
