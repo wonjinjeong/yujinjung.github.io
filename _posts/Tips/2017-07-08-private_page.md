@@ -3,6 +3,7 @@ layout: post
 title: Github private page 
 description: 
 modified: 2017-07-09
+category: Tips
 tags: [Tips]
 image:
   feature: background/Computer/4.jpg

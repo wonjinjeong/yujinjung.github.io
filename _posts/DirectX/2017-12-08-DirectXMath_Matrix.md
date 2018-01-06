@@ -4,6 +4,7 @@ title: DirectXMath Vector
 description: ""
 published: false
 modified: 2017-12-08
+category: DirectX
 tags: [DirectX]
 image:
   feature: background/Computer/2.jpg

@@ -3,7 +3,8 @@ layout: post
 title: Primitives 
 description:
 modified: 2017-06-26
-tags: [OpenGL]
+category: OpenGL
+tags: [OpenGL, Primitive]
 image:
   feature: background/Computer/2.jpg
   credit: unsplash

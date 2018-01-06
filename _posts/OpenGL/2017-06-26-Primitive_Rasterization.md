@@ -3,7 +3,8 @@ layout: post
 title: Primitives and Rasterization 
 description:
 modified: 2017-06-26
-tags: [OpenGL]
+category: OpenGL
+tags: [OpenGL, Rasterization, Primitive]
 image:
   feature: background/Computer/1.jpg
   credit: unsplash

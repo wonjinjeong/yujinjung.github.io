@@ -4,7 +4,8 @@ title: Direct3D 초기화 기본 지식 - 1
 description: ""
 published: true
 modified: 2017-01-02
-tags: [DirectX]
+category: DirectX
+tags: [DirectX, COM, WRL]
 image:
   feature: background/Computer/3.jpg
   credit: unsplash

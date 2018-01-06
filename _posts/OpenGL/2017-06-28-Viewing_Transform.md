@@ -3,7 +3,8 @@ layout: post
 title: Viewing Transform
 description:
 modified: 2017-06-29
-tags: [OpenGL]
+category: OpenGL
+tags: [OpenGL, View transform, Transformation]
 image:
   feature: background/Computer/4.jpg
   credit: unsplash

@@ -3,7 +3,8 @@ layout: post
 title: Shader Programming - Uniform, Attribute
 description:
 modified: 2017-06-26
-tags: [OpenGL]
+category: OpenGL
+tags: [OpenGL, glUniform, glAttribute]
 image:
   feature: background/Computer/6.jpg
   credit: unsplash

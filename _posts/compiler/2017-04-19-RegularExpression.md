@@ -3,7 +3,8 @@ layout: post
 title: Regular Expression
 description:
 modified: 2017-04-11
-tags: [Compiler]
+category: Compiler
+tags: [Compiler, Regular expression]
 image:
   feature: background/Computer/4.jpg
   credit: unsplash

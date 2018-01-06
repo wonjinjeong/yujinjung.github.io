@@ -4,7 +4,8 @@ title: DirectXMath Vector
 description: ""
 published: true
 modified: 2017-12-08
-tags: [DirectX]
+category: DirectX
+tags: [DirectX, DirectXMath, XMVECTOR]
 image:
   feature: background/Computer/1.jpg
   credit: unsplash

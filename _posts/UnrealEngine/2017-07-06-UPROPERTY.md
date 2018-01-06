@@ -4,7 +4,8 @@ title: UPROPERTY
 description:
 modified: 2017-07-06
 published: false
-tags: [Unreal Engine]
+category: Unreal Engine
+tags: [Unreal Engine, UPROPERTY]
 image:
   feature: background/Computer/2.jpg
   credit: unsplash

@@ -3,7 +3,8 @@ layout: post
 title: Projection Transform
 description:
 modified: 2017-06-29
-tags: [OpenGL]
+category: OpenGL
+tags: [OpenGL, Projection transform, Trnasformation]
 image:
   feature: background/Computer/5.jpg
   credit: unsplash

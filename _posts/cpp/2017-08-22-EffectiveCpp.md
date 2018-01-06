@@ -4,7 +4,8 @@ title: Effective C++ Link
 description: ""
 published: true
 modified: 2017-08-28
-tags: [C++]
+category: C++
+tags: [C++, Effective C++]
 image:
   feature: background/Computer/5.jpg
   credit: unsplash

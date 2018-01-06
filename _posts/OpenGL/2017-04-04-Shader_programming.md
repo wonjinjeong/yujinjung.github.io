@@ -3,7 +3,8 @@ layout: post
 title: Shader Programming - Create, Compile, Link 
 description:
 modified: 2017-04-04
-tags: [OpenGL]
+category: OpenGL
+tags: [OpenGL, Shader]
 image:
   feature: background/Computer/6.jpg
   credit: unsplash

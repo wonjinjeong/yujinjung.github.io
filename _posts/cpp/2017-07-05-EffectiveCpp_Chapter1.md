@@ -4,7 +4,8 @@ title: Effective C++_Chapter1
 description: "C++에 왔으면 C++의 법에 따릅시다"
 published: false
 modified: 2017-08-22
-tags: [C++]
+category: C++
+tags: [C++, Effective C++]
 image:
   feature: background/Computer/3.jpg
   credit: unsplash

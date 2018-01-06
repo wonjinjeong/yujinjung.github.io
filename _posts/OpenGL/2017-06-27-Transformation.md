@@ -3,7 +3,8 @@ layout: post
 title: Transformation
 description:
 modified: 2017-06-28
-tags: [OpenGL]
+category: OpenGL
+tags: [OpenGL, Transformation]
 image:
   feature: background/Computer/3.jpg
   credit: unsplash

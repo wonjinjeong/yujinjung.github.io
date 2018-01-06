@@ -213,7 +213,6 @@ h2.entry-subtitle{
 	}
 }
 
-// TODO:
 #post-first {
 	@media #{$small} {
 		.entry-image {
@@ -225,10 +224,20 @@ h2.entry-subtitle{
 			img {
 				min-height: $front-page-feature-image-height;
 			}
-		}
+		}	
 	}
 	@media #{$large} {
-		max-width: 960px;
+		// max-width: 960px;
+		.entry-image {
+			min-height: $front-page-feature-image-height;
+			top: -25%;
+			left: -150%;
+			width: 300%;
+			height: 150%;
+			img {
+				min-height: $front-page-feature-image-height;
+			}
+		}
 	}
 
 }
@@ -248,10 +257,10 @@ h2.entry-subtitle{
 	border-radius: 3px 0 0 0;
 	z-index: 10;
 	@media #{$medium} {
-		max-width: 760px;
+		// max-width: 760px;
 	}
 	@media #{$large} {
-		max-width: 960px;
+		// max-width: 960px;
 	}
 	a {
 		color: #fff;
