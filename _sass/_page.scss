@@ -213,17 +213,24 @@ h2.entry-subtitle{
 	}
 }
 
+// TODO:
 #post-first {
-	.entry-image {
-		min-height: $front-page-feature-image-height;
-		top: -50%;
-		left: -100%;
-		width: 200%;
-		height: 200%;
-		img {
+	@media #{$small} {
+		.entry-image {
 			min-height: $front-page-feature-image-height;
+			top: -25%;
+			left: -150%;
+			width: 300%;
+			height: 150%;
+			img {
+				min-height: $front-page-feature-image-height;
+			}
 		}
 	}
+	@media #{$large} {
+		max-width: 960px;
+	}
+
 }
 
 // Feature Image Caption
@@ -959,6 +966,15 @@ Google Search
 
 #navigation {
 	@media #{$small} {
+		.menu-open+.icon-text{
+			display: none;
+		}
+		.menu-open:checked+.icon-text{
+			display:unset; 
+			position: relative;
+			top: -2px;
+			font-size: 0.7em; 
+		}	
 		.list_category {
 			width: 400px;
 			height: 400px;
@@ -1001,8 +1017,18 @@ Google Search
 			-webkit-transform: translate3d(0, 0, 0) rotate(-45deg);
 			transform: translate3d(0, 0, 0) rotate(-45deg);
 		}
+		
 	}
 	@media #{$medium} {
+		.menu-open+.icon-text{
+			display: none;
+		}
+		.menu-open:checked+.icon-text{
+			display:unset; 
+			position: relative;
+			top: -2px;
+			font-size: 0.7em; 
+		}	
 		.menu-open:checked+.menu-open-button .line-1 {
 			-webkit-transform: translate3d(0, 0, 0) rotate(45deg);
 			transform: translate3d(0, 0, 0) rotate(45deg);
@@ -1014,7 +1040,7 @@ Google Search
 		.menu-open:checked+.menu-open-button .line-3 {
 			-webkit-transform: translate3d(0, 0, 0) rotate(-45deg);
 			transform: translate3d(0, 0, 0) rotate(-45deg);
-		}
+		}	
 	}
 	@media #{$large} {
 		.menu-item,
@@ -1042,6 +1068,15 @@ Google Search
 			transform: translate3d(0, 8px, 0);
 		}
 		.category_:checked+.list_category {}
+		.menu-open+.icon-text{
+			display: none;
+		}
+		.menu-open:checked+.icon-text{
+			display:unset; 
+			position: relative;
+			top: -2px;
+			font-size: 0.7em; 
+		}	
 		.menu-open:checked+.menu-open-button .line-1 {
 			-webkit-transform: translate3d(0, 0, 0) rotate(45deg);
 			transform: translate3d(0, 0, 0) rotate(45deg);
@@ -1058,8 +1093,8 @@ Google Search
 		.menu-open:checked~.menu-item:nth-child(3) {
 			transition-duration: 180ms;
 			-webkit-transition-duration: 180ms;
-			-webkit-transform: translate3d(0.08361px, -80px, 0);
-			transform: translate3d(0.08361px, -80px, 0);
+			-webkit-transform: translate3d(0.08361px, -90px, 0);
+			transform: translate3d(0.08361px, -90px, 0);
 		}
 		/* ---------------------------------------*/
 		.menu-open:checked~.menu-item:nth-child(6) {
@@ -1072,14 +1107,14 @@ Google Search
 		.menu-open:checked~.menu-item:nth-child(4) {
 			transition-duration: 580ms;
 			-webkit-transition-duration: 280ms;
-			-webkit-transform: translate3d(-69.282px, 40px, 0);
-			transform: translate3d(-69.282px, 40px, 0);
+			-webkit-transform: translate3d(-80px, 45px, 0);
+			transform: translate3d(-80px, 45px, 0);
 		}
 		.menu-open:checked~.menu-item:nth-child(5) {
 			transition-duration: 680ms;
 			-webkit-transition-duration: 380ms;
-			-webkit-transform: translate3d(-69.282px, -40px, 0);
-			transform: translate3d(-69.282px, -40px, 0);
+			-webkit-transform: translate3d(-80px, -45px, 0);
+			transform: translate3d(-80px, -45px, 0);
 		}
 	}
 }

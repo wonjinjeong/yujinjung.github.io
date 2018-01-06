@@ -7,9 +7,13 @@
 		<span class="lines line-2"></span>
 		<span class="lines line-3"></span>
 	</label>
-	<a href="#" class="menu-item green"><i class="fa fa-angle-up"></i></a>
+	<a href="#" class="menu-item green">
+		<!-- <i class="fa fa-angle-up"></i> -->
+		<span class="icon-text">Top</span>
+	</a>
 	<nav id="dl-menu" class="menu-item lightblue dl-menuwrapper" role="navigation">
-		<i class="dl-trigger fa fa-th-list"></i>
+		<!-- <i class="dl-trigger fa fa-th-list"></i> -->
+		<span class="icon-text">Posts</span>
 		<ul class="dl-menu">
 			<li>
 				<a href="#">About</a>
@@ -18,70 +22,82 @@
 						<h4>{{ site.owner.name }}</h4>
 						<p>{{ site.owner.bio }}</p>
 					</li>
-					<li><a href="{{ site.url }}/about/"><span class="btn btn-inverse">Learn More</span></a></li>
+					<li>
+						<a href="{{ site.url }}/about/">
+							<span class="btn btn-inverse">Learn More</span>
+						</a>
+					</li>
 					{% if site.owner.email %}
 					<li>
-						<a href="mailto:{{ site.owner.email }}"><i class="fa fa-fw fa-envelope"></i> Email</a>
+						<a href="mailto:{{ site.owner.email }}">
+							<i class="fa fa-fw fa-envelope"></i> Email</a>
 					</li>{% endif %} {% if site.owner.twitter %}
 					<li>
-						<a href="https://twitter.com/{{ site.owner.twitter }}"><i class="fa fa-fw fa-twitter"></i> Twitter</a>
+						<a href="https://twitter.com/{{ site.owner.twitter }}">
+							<i class="fa fa-fw fa-twitter"></i> Twitter</a>
 					</li>{% endif %} {% if site.owner.facebook %}
 					<li>
-						<a href="https://facebook.com/{{ site.owner.facebook }}"><i class="fa fa-fw fa-facebook"></i> Facebook</a>
+						<a href="https://facebook.com/{{ site.owner.facebook }}">
+							<i class="fa fa-fw fa-facebook"></i> Facebook</a>
 					</li>{% endif %} {% if site.owner.google_plus %}
 					<li>
-						<a href="https://google.com/{{ site.owner.google_plus }}"><i class="fa fa-fw fa-google-plus"></i> Google+</a>
+						<a href="https://google.com/{{ site.owner.google_plus }}">
+							<i class="fa fa-fw fa-google-plus"></i> Google+</a>
 					</li>{% endif %} {% if site.owner.linkedin %}
 					<li>
-						<a href="https://linkedin.com/in/{{ site.owner.linkedin }}"><i class="fa fa-fw fa-linkedin"></i> LinkedIn</a>
+						<a href="https://linkedin.com/in/{{ site.owner.linkedin }}">
+							<i class="fa fa-fw fa-linkedin"></i> LinkedIn</a>
 					</li>{% endif %} {% if site.owner.github %}
 					<li>
-						<a href="https://github.com/{{ site.owner.github }}"><i class="fa fa-fw fa-github"></i> GitHub</a>
+						<a href="https://github.com/{{ site.owner.github }}">
+							<i class="fa fa-fw fa-github"></i> GitHub</a>
 					</li>{% endif %} {% if site.owner.stackexchange %}
 					<li>
-						<a href="{{ site.owner.stackexchange }}"><i class="fa fa-fw fa-stack-exchange"></i> Stackexchange</a>
+						<a href="{{ site.owner.stackexchange }}">
+							<i class="fa fa-fw fa-stack-exchange"></i> Stackexchange</a>
 					</li>{% endif %} {% if site.owner.instagram %}
 					<li>
-						<a href="https://instagram.com/{{ site.owner.instagram }}"><i class="fa fa-fw fa-instagram"></i> Instagram</a>
+						<a href="https://instagram.com/{{ site.owner.instagram }}">
+							<i class="fa fa-fw fa-instagram"></i> Instagram</a>
 					</li>{% endif %} {% if site.owner.flickr %}
 					<li>
-						<a href="https://www.flickr.com/photos/{{ site.owner.flickr }}"><i class="fa fa-fw fa-flickr"></i> Flickr</a>
+						<a href="https://www.flickr.com/photos/{{ site.owner.flickr }}">
+							<i class="fa fa-fw fa-flickr"></i> Flickr</a>
 					</li>{% endif %} {% if site.owner.tumblr %}
 					<li>
-						<a href="http://{{ site.owner.tumblr }}.tumblr.com"><i class="fa fa-fw fa-tumblr"></i> Tumblr</a>
+						<a href="http://{{ site.owner.tumblr }}.tumblr.com">
+							<i class="fa fa-fw fa-tumblr"></i> Tumblr</a>
 					</li>{% endif %}
 				</ul>
 				<!-- /.dl-submenu -->
 			</li>
 
-			<li><a href="{{ site.url }}/posts/">Posts</a></li>
-			<li><a href="{{ site.url }}/tags/">Tags</a></li>
+			<li>
+				<a href="{{ site.url }}/posts/">Posts</a>
+			</li>
+			<li>
+				<a href="{{ site.url }}/tags/">Tags</a>
+			</li>
 
+			{% capture site_tags %}{% for tag in site.tags %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{%
+			endcapture %} {% assign tags_list = site_tags | split:',' | sort %} {% for item in (0..site.tags.size) %}{% unless forloop.last
+			%} {% capture this_word %}{{ tags_list[item] | strip_newlines }}{% endcapture %}
+			<li>
+				<a href="{{ site.url }}/tags/#{{ this_word }}" class="tag">
+					<span class="term">{{ this_word }}</a>
+			</li>
+			{% endunless %}{% endfor %}
 
-			{% capture site_tags %}{% for tag in site.tags %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
-			{% assign tags_list = site_tags | split:',' | sort %}
-
-			{% for item in (0..site.tags.size) %}{% unless forloop.last %}
-			{% capture this_word %}{{ tags_list[item] | strip_newlines }}{% endcapture %}
-			<li><a href="{{ site.url }}/tags/#{{ this_word }}" class="tag"><span class="term">{{ this_word }}</a></li>
-		  	{% endunless %}{% endfor %}
-<!-- 
-			<li><a href="{{ site.url }}/tags/#C">C</a></li>
-			<li><a href="{{ site.url }}/tags/#C++">C++</a></li>
-			<li><a href="{{ site.url }}/tags/#Compiler">Compiler</a></li>
-			<li><a href="{{ site.url }}/tags/#Computer Graphics">Computer Graphics</a></li>
-			<li><a href="{{ site.url }}/tags/#Tips">Tips</a></li>
-			<li><a href="{{ site.url }}/tags/#VR">VR</a></li>
-			<li><a href="{{ site.url }}/tags/#Unreal Engine">Unreal Engine</a></li> -->
-			<!--{% for link in site.data.navigation %} {% if link.url contains 'http' %} {% assign domain = '' %} {% else %} {% assign domain
-			= site.url %} {% endif %}
-			<li><a href="{{ domain }}{{ link.url }}" {% if link.url contains 'http' %}target="_blank" {% endif %}>{{ link.title }}</a></li>
-			{% endfor %}-->
 		</ul>
 		<!-- /.dl-menu -->
 	</nav>
-	<a href="{{ site.url }}/" class="menu-item red"><i class="fa fa-home"></i></a>
+	<a href="{{ site.url }}/" class="menu-item red">
+		<!-- <i class="fa fa-home"></i> -->
+		<span class="icon-text">Home</span>
+	</a>
 	<!-- /.dl-menuwrapper -->
-	<a href="{{ site.url }}/about/" class="menu-item purple"><i class="fa fa-user"></i></a>
-
+	<a href="{{ site.url }}/about/" class="menu-item purple">
+		<!-- <i class="fa fa-user"></i> -->
+		<span class="icon-text">Me</span>
+	</a>
 </nav>

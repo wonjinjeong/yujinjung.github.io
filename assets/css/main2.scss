@@ -8,6 +8,8 @@
 body {
     margin-top: 26px;
     font-size: 16px;
+    font-family: $base-font;
+    color: rgba(34,34,34,0.8);
 }
 
 .hidden {
@@ -3465,10 +3467,7 @@ strong {
     transition: all 0.2s ease;
 }
 
-body {
-    font-family: "Ubuntu","Jeju Gothic","NanumBarunGothic",sans-serif;
-    color: rgba(34,34,34,0.8);
-}
+
 
 h1,
 h2,
