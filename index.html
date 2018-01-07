@@ -1,28 +1,36 @@
----
-layout: post-first
+--- 
+layout: post-first 
 title: Yujin`s Blog 
-description: "배운 것을 정리하는 블로그"
-comments: false
-image:
+description: "배운 것을 정리하는 블로그" 
+comments: false 
+image: 
   feature: background/Computer/1.jpg
 ---
 
 <article class="hentry">
   <h2>Category</h2>
 
-  {% capture site_categories %}
-    {% for tag in site.categories %}
-    {{ tag | first }}
-    {% unless forloop.last %},{% endunless %}
-    {% endfor %}
-  {% endcapture %}
+  {% capture site_categories %} 
+    {% for category in site.categories %} {{ category | first }} 
+      {% unless forloop.last %},{% endunless %}
+    {% endfor %} 
+  {% endcapture %} 
   {% assign categories_list = site_categories | split:',' | sort %}
 
   <ul class="entry-meta inline-list">
-    {% for item in (0..site.categories.size) %}{% unless forloop.last %}
-      {% capture this_word %}{{ categories_list[item] | strip_newlines }}{% endcapture %}
-      <li><a href="{{ site.url }}/tags/#{{ this_word }}" class="tag"><span class="term">{{ this_word }}</span> <span class="count">{{ site.categories[this_word].size }}</span></a></li>
-    {% endunless %}{% endfor %}
+      {% for item in (0..site.categories.size) %}
+      {% unless forloop.last %} 
+        {% capture this_word %}
+          {{ categories_list[item] | strip_newlines | lstrip }}
+        {% endcapture %}
+        <li>
+          <a href="{{ site.url }}/tags/#{{ this_word | lstrip }}" class="tag">
+            <span class="term">{{ this_word | lstrip }}</span>
+            <!-- <span class="count">{{ site.categories[this_word].size }}</span> -->
+          </a>
+        </li>
+      {% endunless %}
+    {% endfor %}
   </ul>
 </article>
 
@@ -31,37 +39,59 @@ image:
 <article class="hentry">
   <header>
     {% if post.image.feature %}
-      <div class="entry-image-index">
-        <a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}"><img src="{{ site.url }}/images/{{ post.image.feature }}" alt="{{ post.title }}"></a>
-      </div><!-- /.entry-image -->
+    <div class="entry-image-index">
+      <a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">
+        <img src="{{ site.url }}/images/{{ post.image.feature }}" alt="{{ post.title }}">
+      </a>
+    </div>
+    <!-- /.entry-image -->
     {% endif %}
     <div class="entry-meta">
-      <span class="entry-date date published updated"><time datetime="{{ post.date | date_to_xmlschema }}"><a href="{{ site.url }}{{ post.url }}">{{ post.date | date: "%B %d, %Y" }}</a></time></span><span class="author vcard"><span class="fn"><a href="{{ site.url }}/about/" title="About {{ site.owner.name }}">{{ site.owner.name }}</a></span></span>
+      <span class="entry-date date published updated">
+        <time datetime="{{ post.date | date_to_xmlschema }}">
+          <a href="{{ site.url }}{{ post.url }}">{{ post.date | date: "%B %d, %Y" }}</a>
+        </time>
+      </span>
+      <span class="author vcard">
+        <span class="fn">
+          <a href="{{ site.url }}/about/" title="About {{ site.owner.name }}">{{ site.owner.name }}</a>
+        </span>
+      </span>
       {% if site.reading_time %}
       <span class="entry-reading-time">
         <i class="fa fa-clock-o"></i>
         {% include read-time-index.html %}
-      </span><!-- /.entry-reading-time -->
+      </span>
+      <!-- /.entry-reading-time -->
       {% endif %}
-    </div><!-- /.entry-meta -->
+    </div>
+    <!-- /.entry-meta -->
     {% if post.link %}
-      <h1 class="entry-title"><a href="{{ site.url }}{{ post.url }}" class="permalink" rel="bookmark" title="{{ post.title }}"><i class="fa fa-bookmark"></i></a> <a href="{{ post.link }}">{{ post.title }}</a></h1>
+    <h1 class="entry-title">
+      <a href="{{ site.url }}{{ post.url }}" class="permalink" rel="bookmark" title="{{ post.title }}">
+        <i class="fa fa-bookmark"></i>
+      </a>
+      <a href="{{ post.link }}">{{ post.title }}</a>
+    </h1>
     {% else %}
-      <h1 class="entry-title"><a href="{{ site.url }}{{ post.url }}" rel="bookmark" title="{{ post.title }}" itemprop="url">{{ post.title }}</a></h1>
+    <h1 class="entry-title">
+      <a href="{{ site.url }}{{ post.url }}" rel="bookmark" title="{{ post.title }}" itemprop="url">{{ post.title }}</a>
+    </h1>
     {% endif %}
   </header>
   <div class="entry-content">
     {{ post.content }}
-	<!--{{ post.description }}
+    <!--{{ post.description }}
 
 		{% if site.tags %}
 		<span class="entry-reading-time">
 			<i class="fa fa-clock-o"></i>
 			{% include read-time-index.html %}
 		</span>
-		{% endif %}--><!-- /.entry-reading-time -->
-  </div><!-- /.entry-content -->
-</article><!-- /.hentry -->
-{% endfor %}
-
-{% include pagination.html %}
+		{% endif %}-->
+    <!-- /.entry-reading-time -->
+  </div>
+  <!-- /.entry-content -->
+</article>
+<!-- /.hentry -->
+{% endfor %} {% include pagination.html %}

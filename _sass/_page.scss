@@ -975,10 +975,7 @@ Google Search
 
 #navigation {
 	@media #{$small} {
-		.menu-open+.icon-text{
-			display: none;
-		}
-		.menu-open:checked+.icon-text{
+		.icon-text{
 			display:unset; 
 			position: relative;
 			top: -2px;
@@ -1029,10 +1026,7 @@ Google Search
 		
 	}
 	@media #{$medium} {
-		.menu-open+.icon-text{
-			display: none;
-		}
-		.menu-open:checked+.icon-text{
+		.icon-text{
 			display:unset; 
 			position: relative;
 			top: -2px;
@@ -1077,10 +1071,8 @@ Google Search
 			transform: translate3d(0, 8px, 0);
 		}
 		.category_:checked+.list_category {}
-		.menu-open+.icon-text{
-			display: none;
-		}
-		.menu-open:checked+.icon-text{
+		
+		.icon-text{
 			display:unset; 
 			position: relative;
 			top: -2px;

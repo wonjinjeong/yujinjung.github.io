@@ -13,7 +13,7 @@
 	</a>
 	<nav id="dl-menu" class="menu-item lightblue dl-menuwrapper" role="navigation">
 		<!-- <i class="dl-trigger fa fa-th-list"></i> -->
-		<span class="icon-text">Posts</span>
+		<span class="dl-trigger icon-text">Menu</span>
 		<ul class="dl-menu">
 			<li>
 				<a href="#">About</a>
@@ -79,14 +79,24 @@
 				<a href="{{ site.url }}/tags/">Tags</a>
 			</li>
 
-			{% capture site_tags %}{% for tag in site.tags %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{%
-			endcapture %} {% assign tags_list = site_tags | split:',' | sort %} {% for item in (0..site.tags.size) %}{% unless forloop.last
-			%} {% capture this_word %}{{ tags_list[item] | strip_newlines }}{% endcapture %}
+			{% capture site_categories %} 
+    			{% for category in site.categories %} {{ category | first }} 
+      				{% unless forloop.last %},{% endunless %}
+    			{% endfor %} 
+  			{% endcapture %} 
+  			{% assign categories_list = site_categories | split:',' | sort %}
+
+			{% for item in (0..site.categories.size) %}
+			  	{% unless forloop.last %} 
+					{% capture this_word %}
+				 		{{ categories_list[item] | strip_newlines | lstrip }}
+					{% endcapture %}
 			<li>
-				<a href="{{ site.url }}/tags/#{{ this_word }}" class="tag">
-					<span class="term">{{ this_word }}</a>
+				<a href="{{ site.url }}/tags/#{{ this_word | lstrip }}" class="tag">
+					<span class="term">{{ this_word | lstrip }}</a>
 			</li>
-			{% endunless %}{% endfor %}
+				{% endunless %}
+			{% endfor %}
 
 		</ul>
 		<!-- /.dl-menu -->
